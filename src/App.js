@@ -1,12 +1,19 @@
-import './App.css';
-import './index.css'
-import Main from './components/Main'
+import "./App.css";
+import "./index.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import Main from "./components/Main";
+import Signup from "./components/Signup";
+import MainLogin from "./components/MainLogin";
 
 function App() {
   return (
-    <div className="m-2 h-screen max-h-screen">
-      {/* <Main/> */}
-    </div>
+    <BrowserRouter>
+      <div className="flex flex-col min-h-screen">
+        <Route path="/" component={MainLogin} exact></Route>
+        <Route path="/signup" component={Signup}></Route>
+        <Route path="/home" component={Main}></Route>
+      </div>
+    </BrowserRouter>
   );
 }
 
