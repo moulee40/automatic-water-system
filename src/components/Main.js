@@ -35,7 +35,7 @@ class Main extends React.Component {
 
 
   <Sidebar />
-  <div className="flex flex-wrap">
+  <div className="flex flex-wrap p-6 justify-center items-center">
   {coolingTower.map(label => {
   return(<MotorCard label={label}/>);
 })}
