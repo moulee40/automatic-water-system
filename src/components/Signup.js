@@ -76,15 +76,21 @@ class Signup extends React.Component {
   render() {
     const { username, email, phoneNumber, password, shouldAlertDisplay,shouldErrorMessageDisplay,signupErrorMessage } =
       this.state;
+     
       
     return (
-      <div className="flex flex-col space-y-5 max-w-md mx-auto my-16 w-1/2">
-        <h2 className="text-4xl font-semibold text-blue-500">Signup</h2>
+     
+      <div className="flex flex-col">
+      <div className="flex justify-center p-4 text-5xl text-white bg-blue-500 shadow-md font-medium ">Automatic Water System</div>
+      <div className={`flex flex-col space-y-5 max-w-md mx-auto my-16 w-1/2  px-8 py-16 shadow-2xl`}>
+      <div className="flex items-center justify-center pb-8">
+        <h2 className={`text-4xl font-semibold`}>Signup</h2>
+      </div>
         <TextField
           required
           id="outlined-username"
           value={username}
-          label="Doctor ID"
+          label="Employee ID"
           autoComplete="off"
           onChange={(e) => this.handleUsernameChange(e)}
         />
@@ -92,7 +98,7 @@ class Signup extends React.Component {
           required
           id="outlined-email"
           value={email}
-          label="Doctor Name"
+          label="User Name"
           onChange={(e) => this.handleEmailChange(e)}
         />
         <TextField
@@ -117,21 +123,6 @@ class Signup extends React.Component {
           label="Email ID"
           onChange={(e) => this.handlePhoneNumberChange(e)}
         />
-
-        <TextField
-          
-          id="outlined-phone"
-          value={phoneNumber}
-          label="Doctor Specification"
-          onChange={(e) => this.handlePhoneNumberChange(e)}
-        />
-        <TextField
-          required
-          id="outlined-phone"
-          value={phoneNumber}
-          label="Doctor Address"
-          onChange={(e) => this.handlePhoneNumberChange(e)}
-        />
         
         <div className="flex items-center justify-between">
           <Button variant="contained" style={{backgroundColor:'#2b82f6'}} onClick={this.handleSubmit}>
@@ -152,6 +143,11 @@ class Signup extends React.Component {
         }
         
       </div>
+      </div>
+
+
+     
+     
     );
   }
 }
