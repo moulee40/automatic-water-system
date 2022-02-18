@@ -7,7 +7,9 @@ import MotorCard from "./MotorCard";
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      openDialog : false
+    };
   }
 
   componentWillMount() {
@@ -27,7 +29,12 @@ class Main extends React.Component {
     push("/");
   };
 
+  openDialog = () =>{
+    this.setState({openDialog:true})
+  }
+
   render() {
+    const {openDialog} = this.state;
     const coolingTower = ["CT1","CT2","CT3","CT4","CT5","CT6","CT7","CT8","CT9","CT10"];
     return (
       <div className="space-y-5 h-screen flex">
