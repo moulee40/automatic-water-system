@@ -14,7 +14,8 @@ class SettingPage extends React.Component {
     super(props);
     this.state = {
       openDialog : false,
-      dataList:[]
+      dataList:[],
+      role:localStorage.getItem("role")
     };
   }
 
@@ -74,51 +75,52 @@ class SettingPage extends React.Component {
   
 
   render() {
-
+    const{role}= this.state;
+    const isEditable = (role==="admin"?true:false);
     const columns = [
-      { field: 'constituent', width: 180, editable: true,  renderHeader: () => (
+      { field: 'constituent', width: 180,  editable:isEditable, renderHeader: () => (
         <strong>
          <span>Constituent</span>
         </strong>
       ) },
-      { field: 'stream1', type: 'number',editable: true ,
+      { field: 'stream1', type: 'number',
       renderHeader: () => (
         <strong>
          <span>Stream1</span>
         </strong>
       )
     },
-      { field: 'stream2', type: 'number', editable: true,renderHeader: () => (
+      { field: 'stream2', type: 'number', editable: isEditable,renderHeader: () => (
         <strong>
          <span>Stream2</span>
         </strong>
       ) },
-      { field: 'stream3', type: 'number', editable: true,renderHeader: () => (
+      { field: 'stream3', type: 'number', editable: isEditable,renderHeader: () => (
         <strong>
          <span>Stream3</span>
         </strong>
       ) },
-      { field: 'stream4', type: 'number', editable: true,renderHeader: () => (
+      { field: 'stream4', type: 'number', editable: isEditable,renderHeader: () => (
         <strong>
          <span>Stream4</span>
         </strong>
       ) },
-      { field: 'stream5', type: 'number', editable: true,renderHeader: () => (
+      { field: 'stream5', type: 'number', editable: isEditable,renderHeader: () => (
         <strong>
          <span>Stream5</span>
         </strong>
       ) },
-      { field: 'stream6',type: 'number', editable: true,renderHeader: () => (
+      { field: 'stream6',type: 'number', editable: isEditable,renderHeader: () => (
         <strong>
          <span>Stream6</span>
         </strong>
       ) },
-      { field: 'stream7', type: 'number', editable: true,renderHeader: () => (
+      { field: 'stream7', type: 'number', editable: isEditable,renderHeader: () => (
         <strong>
          <span>Stream7</span>
         </strong>
       ) },
-      { field: 'stream8', type: 'number', editable: true,renderHeader: () => (
+      { field: 'stream8', type: 'number', editable: isEditable,renderHeader: () => (
         <strong>
          <span>Stream8</span>
         </strong>
@@ -143,7 +145,7 @@ class SettingPage extends React.Component {
       { id: 14,constituent:'Phosphate as PO4',stream1:42.64,stream2: 25,stream3:42.64,stream4: 42,stream5: 42.64,stream6: 42.64,stream7: 42.64,stream8: 42.64},
       { id: 15,constituent:'Silica as SiO2',stream1:42.64,stream2: 25,stream3:42.64,stream4: 42,stream5: 42.64,stream6: 42.64,stream7: 42.64,stream8: 42.64},
     ];
-   
+  
     return (
       <div className="space-y-5 h-screen flex">
        
@@ -163,11 +165,7 @@ class SettingPage extends React.Component {
         // onRowEditCommit = {this.onRowEditCommit}
         onStateChange = {e=>this.onStateChange(e)}
         // isCellEditable = {this.isCellEditable}
-        disableSelectionOnClick = {true}
-        
-        
-
-      
+        // disableSelectionOnClick = {true}
       />
     </div>
  

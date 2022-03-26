@@ -14,7 +14,8 @@ class Login extends React.Component {
       username: "",
       password: "",
       shouldAlertDisplay: false,
-      shouldLoginErrorDisplay:false
+      shouldLoginErrorDisplay:false,
+      
     };
   }
 
@@ -27,14 +28,35 @@ class Login extends React.Component {
   };
 
   handleLogin = () => {
-    // const { username, password } = this.state;
+    const { username, password } = this.state;
     const {
       history: { push },
     } = this.props;
-    // if (username === "" || password === "") {
-    //   this.setState({ shouldAlertDisplay: true });
-    //   return;
-    // }
+    if (username === "" || password === "") {
+      this.setState({ shouldAlertDisplay: true });
+      return;
+    }
+    if (username === "admin" && password === "admin") {
+      push({
+        pathname: "/home",
+      });
+      localStorage.setItem("role","admin")
+    }
+    else if(username === "sharma" && password === "sharma"){
+      push({
+        pathname: "/home",
+      });
+      localStorage.setItem("role","user")
+    }
+    else if(username === "bala" && password === "bala"){
+      push({
+        pathname: "/home",
+      });
+      localStorage.setItem("role","guest")
+    }else{
+      this.setState({shouldLoginErrorDisplay: true})
+      return;
+    }
     // this.setState({ shouldAlertDisplay: false });
     // this.setState({ shouldLoginErrorDisplay: false });
     // const reqJson={
