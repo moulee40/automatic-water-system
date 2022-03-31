@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import Sidebar from "./Sidebar";
 import MotorCard from "./MotorCard";
+import Dialog from "./Dialog";
 
 class Main extends React.Component {
   constructor(props) {
@@ -32,6 +33,10 @@ class Main extends React.Component {
     this.setState({openDialog:true})
   }
 
+  handleClose = () =>{
+    this.setState({openDialog:false})
+  }
+
   render() {
     const {openDialog} = this.state;
     const coolingTower = ["CT1","CT2","CT3","CT4","CT5","CT6","CT7","CT8","CT9","CT10"];
@@ -42,12 +47,12 @@ class Main extends React.Component {
 
   <Sidebar />
   <div className="flex flex-wrap p-6 justify-center items-center">
-  {coolingTower.map(label => {
-  return(<MotorCard label={label}/>);
+  {coolingTower.map((label,index) => {
+  return(<MotorCard label={label} onClick={this.openDialog} key={index}/>);
 })}
 
   </div>
-
+  <Dialog open={openDialog} handleClose={this.handleClose}/>
       </div>
     );
   }
