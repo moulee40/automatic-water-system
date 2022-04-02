@@ -6,15 +6,16 @@ import Alert from "@mui/material/Alert";
 import { withRouter } from "react-router";
 import axios from "axios";
 
-const eventBaseUrl = "http://localhost:8080/user/register";
+const eventBaseUrl = "https://o0qudsxt1l.execute-api.us-east-2.amazonaws.com/dev/signup";
 
 class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      employeeId:"",
       username: "",
       email: "",
-      phoneNumber: "",
+      phone: "",
       password: "",
       shouldAlertDisplay: false,
       shouldErrorMessageDisplay: false,
@@ -22,6 +23,10 @@ class Signup extends React.Component {
 
     };
   }
+
+  handleEmployeeIdChange = (e) => {
+    this.setState({ employeeId: e.target.value });
+  };
 
   handleUsernameChange = (e) => {
     this.setState({ username: e.target.value });
@@ -31,8 +36,8 @@ class Signup extends React.Component {
     this.setState({ email: e.target.value });
   };
 
-  handlePhoneNumberChange = (e) => {
-    this.setState({ phoneNumber: e.target.value });
+  handlePhoneChange = (e) => {
+    this.setState({ phone: e.target.value });
   };
 
   handlePasswordChange = (e) => {
@@ -40,41 +45,43 @@ class Signup extends React.Component {
   };
 
   handleSubmit = () => {
-    const { username, email, phoneNumber, password } = this.state;
+    const { employeeId,username, email, phone, password } = this.state;
     const {
       history: { push },
     } = this.props;
     if (
+      employeeId ==="" ||
       username === "" ||
       email === "" ||
-      phoneNumber === "" ||
+      phone === "" ||
       password === ""
     ) {
       this.setState({ shouldAlertDisplay: true });
       return;
     }
     const reqJson={
+     employeeId:employeeId,
      username:username,
      password:password,
-      email:email,
-       phone:phoneNumber
+     email:email,
+     phone:phone,
+     "isPartner": false
     }
     axios.post(eventBaseUrl,reqJson).then((res) => {
-      if(res.data.isRegistered)
+      if(res.data.status==="SUCCESS")
       {
         push('/');
-      }
-      if(!res.data.isRegistered){
-       this.setState({
-        signupErrorMessage:res.data.error,
-        shouldErrorMessageDisplay:true
-       }) 
+      }else{
+        this.setState({
+          signupErrorMessage:res.data.errorMessage,
+          shouldErrorMessageDisplay:true
+         }) 
       }
     });
   };
 
   render() {
-    const { username, email, phoneNumber, password, shouldAlertDisplay,shouldErrorMessageDisplay,signupErrorMessage } =
+    const {employeeId, username, email, phone, password, shouldAlertDisplay,shouldErrorMessageDisplay,signupErrorMessage } =
       this.state;
      
       
@@ -89,17 +96,17 @@ class Signup extends React.Component {
         <TextField
           required
           id="outlined-username"
-          value={username}
+          value={employeeId}
           label="Employee ID"
           autoComplete="off"
-          onChange={(e) => this.handleUsernameChange(e)}
+          onChange={(e) => this.handleEmployeeIdChange(e)}
         />
         <TextField
           required
           id="outlined-email"
-          value={email}
+          value={username}
           label="User Name"
-          onChange={(e) => this.handleEmailChange(e)}
+          onChange={(e) => this.handleUsernameChange(e)}
         />
         <TextField
           value={password}
@@ -112,16 +119,16 @@ class Signup extends React.Component {
         <TextField
           required
           id="outlined-phone"
-          value={phoneNumber}
+          value={phone}
           label="Phone Number"
-          onChange={(e) => this.handlePhoneNumberChange(e)}
+          onChange={(e) => this.handlePhoneChange(e)}
         />
         <TextField
           required
           id="outlined-phone"
-          value={phoneNumber}
+          value={email}
           label="Email ID"
-          onChange={(e) => this.handlePhoneNumberChange(e)}
+          onChange={(e) => this.handleEmailChange(e)}
         />
         
         <div className="flex items-center justify-between">

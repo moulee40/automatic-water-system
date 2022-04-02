@@ -6,7 +6,7 @@ import Alert from "@mui/material/Alert";
 import { withRouter } from "react-router";
 import axios from "axios";
 
-const eventBaseUrl = "http://localhost:8080/user/login";
+const eventBaseUrl = "https://7m7h3lrybf.execute-api.us-east-2.amazonaws.com/dev/login";
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -15,7 +15,7 @@ class Login extends React.Component {
       password: "",
       shouldAlertDisplay: false,
       shouldLoginErrorDisplay:false,
-      
+      signInErrorMessage:""
     };
   }
 
@@ -41,49 +41,52 @@ class Login extends React.Component {
         pathname: "/home",
       });
       localStorage.setItem("role","admin")
-    }
-    else if(username === "sharma" && password === "sharma"){
-      push({
-        pathname: "/home",
-      });
-      localStorage.setItem("role","user")
-    }
-    else if(username === "bala" && password === "bala"){
-      push({
-        pathname: "/home",
-      });
-      localStorage.setItem("role","guest")
-    }else{
-      this.setState({shouldLoginErrorDisplay: true})
       return;
     }
-    // this.setState({ shouldAlertDisplay: false });
-    // this.setState({ shouldLoginErrorDisplay: false });
-    // const reqJson={
-    //   username:username,password:password
-    // }
-    // axios.post(eventBaseUrl,reqJson).then((res) => {
-    //  if(res.data)
-    //  {
-    //    localStorage.setItem("username",username)
+    // else if(username === "sharma" && password === "sharma"){
     //   push({
     //     pathname: "/home",
-    //     username: username, 
     //   });
-    //  }
-    //  if(!res.data){
-    //    this.setState({shouldLoginErrorDisplay: true})
-    //  }
-    // });
-
-    push({
-      pathname: "/home",
-      // username: username, 
+    //   localStorage.setItem("role","user")
+    // }
+    // else if(username === "bala" && password === "bala"){
+    //   push({
+    //     pathname: "/home",
+    //   });
+    //   localStorage.setItem("role","guest")
+    // }else{
+    //   this.setState({shouldLoginErrorDisplay: true})
+    //   return;
+    // }
+    
+    const reqJson={
+      username:username,password:password
+    }
+    axios.post(eventBaseUrl,reqJson).then((res) => {
+     if(res.data.status==="SUCCESS")
+     {
+      if(res.data.isPartner){
+        localStorage.setItem("role","user")
+      }
+      else{
+        localStorage.setItem("role","guest")
+      }
+      localStorage.setItem("userId",res.data.userId)
+      localStorage.setItem("password",password)
+      push({
+        pathname: "/home",
+      });
+     }
+     else{
+      this.setState({shouldLoginErrorDisplay: true,signInErrorMessage:res.data.errorMessage})
+     }
+     
     });
+
   };
 
   render() {
-    const { username, password, shouldAlertDisplay,shouldLoginErrorDisplay } = this.state;
+    const { username, password, shouldAlertDisplay,shouldLoginErrorDisplay,signInErrorMessage} = this.state;
     const {type} = this.props;
     const isAdmin = type === 'Admin';
     return (
@@ -121,7 +124,7 @@ class Login extends React.Component {
           <Alert severity="error">Field cannot be empty</Alert>
         )}
         {shouldLoginErrorDisplay && (
-          <Alert severity="error">Invalid username or password</Alert>
+          <Alert severity="error"> {signInErrorMessage} </Alert>
         )}
       </div>
     );
