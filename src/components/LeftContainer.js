@@ -1,7 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
 import DetailBox from "./DetailBox";
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 

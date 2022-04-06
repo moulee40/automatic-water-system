@@ -42,18 +42,18 @@ class Main extends React.Component {
 
   render() {
     const {openDialog} = this.state;
-    const coolingTower = ["CT1"];
+    const coolingTower = ["CT1","CT2","CT3"];
     return (
   <div className="space-y-5 h-screen flex">
       <Sidebar />
-      <div className="flex flex-1 flex-wrap p-6 justify-center">
+      <div className="flex flex-1 flex-wrap p-6 justify-center space-y-80">
       {coolingTower.map((label,index) => {
       return(
-      <div className="flex">
-      <LeftContainer/>  
-      <MotorCard label={label} onClick={this.openDialog} key={index}/>
-      {/* <BottomContainer/> */}
-      <RightContainer/>
+        <div className="flex relative">
+          <LeftContainer/>  
+          <MotorCard label={label} onClick={this.openDialog} key={index}/>
+          <RightContainer/>
+          <BottomContainer/>
   </div>
   );
 })}
