@@ -4,6 +4,7 @@ import Sidebar from "./Sidebar";
 import MotorCard from "./MotorCard";
 import Dialog from "./Dialog";
 import DetailBox from "./DetailBox";
+import BottomContainer from "./BottomContainer";
 
 class Main extends React.Component {
   constructor(props) {
@@ -52,7 +53,8 @@ class Main extends React.Component {
   return(
   <div className="flex">  
   <MotorCard label={label} onClick={this.openDialog} key={index}/>
-  <DetailBox/>
+  <BottomContainer/>
+  
   </div>
   );
 })}
