@@ -4,8 +4,9 @@ import { withRouter } from "react-router";
 class DetailBox extends React.Component {
 
   render() {
+      const {marginTopLg} = this.props;
     return (
-        <div className="flex w-40 h-28 border-2 border-solid border-black rounded relative">
+        <div className={`flex w-40 h-28 border-2 border-solid border-black rounded relative m-4 ${marginTopLg ? 'mt-28' :''}`}>
             <span className="pl-2">Return Temp [C] 3B
             62T1510
             </span>

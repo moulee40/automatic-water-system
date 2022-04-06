@@ -3,7 +3,8 @@ import { withRouter } from "react-router";
 import Sidebar from "./Sidebar";
 import MotorCard from "./MotorCard";
 import Dialog from "./Dialog";
-import DetailBox from "./DetailBox";
+import RightContainer from "./RightContainer";
+import LeftContainer from "./LeftContainer";
 import BottomContainer from "./BottomContainer";
 
 class Main extends React.Component {
@@ -43,18 +44,16 @@ class Main extends React.Component {
     const {openDialog} = this.state;
     const coolingTower = ["CT1"];
     return (
-      <div className="space-y-5 h-screen flex">
-        {/* <div className="flex justify-end items-center"> */}
-
-
-  <Sidebar />
-  <div className="flex flex-1 flex-wrap p-6 justify-center">
-  {coolingTower.map((label,index) => {
-  return(
-  <div className="flex">  
-  <MotorCard label={label} onClick={this.openDialog} key={index}/>
-  <BottomContainer/>
-  
+  <div className="space-y-5 h-screen flex">
+      <Sidebar />
+      <div className="flex flex-1 flex-wrap p-6 justify-center">
+      {coolingTower.map((label,index) => {
+      return(
+      <div className="flex">
+      <LeftContainer/>  
+      <MotorCard label={label} onClick={this.openDialog} key={index}/>
+      {/* <BottomContainer/> */}
+      <RightContainer/>
   </div>
   );
 })}
