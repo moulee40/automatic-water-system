@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import Sidebar from "./Sidebar";
 import MotorCard from "./MotorCard";
 import Dialog from "./Dialog";
+import DetailBox from "./DetailBox";
 
 class Main extends React.Component {
   constructor(props) {
@@ -39,16 +40,21 @@ class Main extends React.Component {
 
   render() {
     const {openDialog} = this.state;
-    const coolingTower = ["CT1","CT2","CT3","CT4","CT5","CT6","CT7","CT8","CT9","CT10"];
+    const coolingTower = ["CT1"];
     return (
       <div className="space-y-5 h-screen flex">
         {/* <div className="flex justify-end items-center"> */}
 
 
   <Sidebar />
-  <div className="flex flex-wrap p-6 justify-center items-center">
+  <div className="flex flex-1 flex-wrap p-6 justify-center">
   {coolingTower.map((label,index) => {
-  return(<MotorCard label={label} onClick={this.openDialog} key={index}/>);
+  return(
+  <div className="flex">  
+  <MotorCard label={label} onClick={this.openDialog} key={index}/>
+  <DetailBox/>
+  </div>
+  );
 })}
 
   </div>
