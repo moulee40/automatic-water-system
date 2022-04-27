@@ -123,7 +123,7 @@ class UserManagement extends React.Component {
        
     <Sidebar />
 
-    <Paper sx={{ width: '60%', overflow: 'hidden',marginLeft:'175px',maxHeight:'850px'}}>
+    <Paper sx={{ width: '60%', overflow: 'hidden',marginLeft:'175px',maxHeight:'850px',display:'flex',flexDirection:'column'}}>
       <TableContainer>
         <Table  aria-label="sticky table">
           <TableHead>

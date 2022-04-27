@@ -148,8 +148,8 @@ class SettingPage extends React.Component {
       <div className="space-y-5 h-screen flex">
        
       <Sidebar />
-      <div style={{ width: '51%',height:'85%', margin:'30px 0px 0px 300px' }}>
-      <DataGrid
+      <div style={{width: '100%',height:'85%', paddingRight:250, paddingLeft:250 }}>
+      <DataGrid 
         rows={this.state.dataList}
         columns={columns}
         experimentalFeatures={{ newEditingApi: true }}
@@ -165,9 +165,10 @@ class SettingPage extends React.Component {
         // isCellEditable = {this.isCellEditable}
         // disableSelectionOnClick = {true}
       />
+     { isEditable &&
       <div style={{display:'flex',justifyContent:'flex-end',marginTop:'20px'}}>
       <Button variant="contained" onClick={this.handleSubmit}>Submit</Button>
-      </div>
+      </div>}
       
       
     </div>
