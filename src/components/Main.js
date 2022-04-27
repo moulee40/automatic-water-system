@@ -6,6 +6,7 @@ import Dialog from "./Dialog";
 import RightContainer from "./RightContainer";
 import LeftContainer from "./LeftContainer";
 import BottomContainer from "./BottomContainer";
+import DashboardTopSection from "./DashboardTopSection";
 
 class Main extends React.Component {
   constructor(props) {
@@ -47,6 +48,8 @@ class Main extends React.Component {
     return (
   <div className="space-y-5 h-screen flex">
       <Sidebar />
+
+      <DashboardTopSection></DashboardTopSection>
       <div className="flex flex-1 flex-wrap p-6 justify-center">
       {coolingTower.map((label,index) => {
       return(

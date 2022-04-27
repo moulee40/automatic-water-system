@@ -131,11 +131,11 @@ class Signup extends React.Component {
           onChange={(e) => this.handleEmailChange(e)}
         />
         
-        <div className="flex items-center justify-between">
+        <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
           <Button variant="contained" style={{backgroundColor:'#2b82f6'}} onClick={this.handleSubmit}>
             Submit
           </Button>
-          <div className="flex">
+          <div style={{display:'flex'}}>
             <p className="text-lg">Existing User?</p>
             <Link to="/" className="text-blue-500 font-semibold text-lg px-1">
               Login
