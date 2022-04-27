@@ -7,6 +7,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
 const rows = [
@@ -22,7 +24,7 @@ class DashboardTopSection extends React.Component {
     return (
         <div>
            <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 1000 }} aria-label="simple table">
+      <Table sx={{ minWidth: 750 }} aria-label="simple table">
         
         <TableBody>
           {rows.map((row) => (
@@ -41,6 +43,35 @@ class DashboardTopSection extends React.Component {
         </TableBody>
       </Table>
     </TableContainer>
+
+    <div className="flex justify-end absolute left-1/3">
+          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
+            <div className="mt-40">
+                
+                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[86%] -ml-6' style={{fontSize:'46px'}}/>
+           </div>
+           </div>
+      </div>
+      <div className="flex justify-end absolute left-1/3 ml-60">
+          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10 ">
+            <div className="mt-40">
+                
+                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[86%] -ml-6' style={{fontSize:'46px'}}/>
+           </div>
+           </div>
+      </div>
+      <div className="flex justify-end absolute left-1/3 ml-96">
+          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
+            <div className="mt-40">
+                
+                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[86%] -ml-6' style={{fontSize:'46px'}}/>
+           </div>
+           </div>
+      </div>
+
       </div>
    
     );

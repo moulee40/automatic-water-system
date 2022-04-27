@@ -48,9 +48,9 @@ class Main extends React.Component {
     return (
   <div className="space-y-5 h-screen flex">
       <Sidebar />
-
+      <div>
       <DashboardTopSection></DashboardTopSection>
-      <div className="flex flex-1 flex-wrap p-6 justify-center">
+      <div className="flex flex-1 flex-wrap p-6 justify-evenly ml-48">
       {coolingTower.map((label,index) => {
       return(
         <div className="flex relative">
@@ -63,6 +63,8 @@ class Main extends React.Component {
 })}
 
   </div>
+      </div>
+      
   <Dialog open={openDialog} handleClose={this.handleClose} currentLabel={this.state.currentLabel}/>
       </div>
     );
