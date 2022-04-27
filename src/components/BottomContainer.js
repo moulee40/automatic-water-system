@@ -9,13 +9,13 @@ class BottomContainer extends React.Component {
 
   render() {
     return (
-        <div className="flex justify-end absolute left-[62%] top-[28.7%]">
+        <div className="flex justify-end absolute top-full left-1/3">
           <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
             <div className="mt-40">
                 <DetailBox/>
                 <DetailBox/>
-                <ArrowForwardIosIcon className='text-blue-600 absolute top-[98.3%] left-[91%]'/>
-                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[10%] left-[-12%]' style={{fontSize:'46px'}}/>
+                <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/>
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[10%] left-[-12.5%]' style={{fontSize:'46px'}}/>
            </div>
            </div>
       </div>

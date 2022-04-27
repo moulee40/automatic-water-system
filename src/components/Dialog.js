@@ -55,9 +55,9 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
         <List className='flex flex-1 justify-center'>
             <div className="flex relative">
               <LeftContainer/>  
-              <MotorCard label={currentLabel} />
+              <MotorCard label={currentLabel} displayBottom/>
               <RightContainer/>
-              <BottomContainer/>
+              {/* <BottomContainer/> */}
             </div>
         </List>
       </Dialog>
