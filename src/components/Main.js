@@ -50,10 +50,10 @@ class Main extends React.Component {
       {coolingTower.map((label,index) => {
       return(
         <div className="flex relative">
-          <LeftContainer/>  
+          {/* <LeftContainer/>   */}
           <MotorCard label={label} onClick={this.openDialog} key={index}/>
-          <RightContainer/>
-          <BottomContainer/>
+          {/* <RightContainer/> */}
+          {/* <BottomContainer/> */}
   </div>
   );
 })}
