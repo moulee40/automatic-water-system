@@ -11,7 +11,8 @@ class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      openDialog : false
+      openDialog : false,
+      currentLabel:''
     };
   }
 
@@ -32,8 +33,8 @@ class Main extends React.Component {
     push("/");
   };
 
-  openDialog = () =>{
-    this.setState({openDialog:true})
+  openDialog = (label) =>{
+    this.setState({openDialog:true,currentLabel:label})
   }
 
   handleClose = () =>{
@@ -46,20 +47,20 @@ class Main extends React.Component {
     return (
   <div className="space-y-5 h-screen flex">
       <Sidebar />
-      <div className="flex flex-1 flex-wrap p-6 justify-center space-y-80">
+      <div className="flex flex-1 flex-wrap p-6 justify-center">
       {coolingTower.map((label,index) => {
       return(
         <div className="flex relative">
           {/* <LeftContainer/>   */}
-          <MotorCard label={label} onClick={this.openDialog} key={index}/>
-          {/* <RightContainer/> */}
-          {/* <BottomContainer/> */}
+          <MotorCard label={label} onClick={()=>this.openDialog(label)} key={index}/>
+          {/* <RightContainer/>
+          <BottomContainer/> */}
   </div>
   );
 })}
 
   </div>
-  <Dialog open={openDialog} handleClose={this.handleClose}/>
+  <Dialog open={openDialog} handleClose={this.handleClose} currentLabel={this.state.currentLabel}/>
       </div>
     );
   }
