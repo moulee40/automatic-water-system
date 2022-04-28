@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import Button from "@mui/material/Button";
 import Dialog from '@material-ui/core/Dialog';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
@@ -47,7 +47,7 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
             <Typography variant="h6" className={classes.title}>
               Details
             </Typography>
-            <Button autoFocus color="inherit" onClick={handleClose}>
+            <Button color="inherit" onClick={handleClose}>
               Ok
             </Button>
           </Toolbar>
@@ -60,6 +60,11 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
               {/* <BottomContainer/> */}
             </div>
         </List>
+        <div className="flex justify-end">
+        <button
+            class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5"
+            >More Info</button>
+        </div>
       </Dialog>
     </div>
   );
