@@ -48,9 +48,9 @@ class Main extends React.Component {
     return (
   <div className="space-y-5 h-screen flex">
       <Sidebar />
-      <div>
+      <div className="flex flex-col relative">
       <DashboardTopSection></DashboardTopSection>
-      <div className="flex flex-1 flex-wrap p-6 justify-evenly ml-48">
+      <div className="flex flex-1 flex-wrap p-6 justify-evenly ml-48 relative">
       {coolingTower.map((label,index) => {
       return(
         <div className="flex relative">
