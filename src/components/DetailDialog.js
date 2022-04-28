@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from "@mui/material/Button";
 import Dialog from '@material-ui/core/Dialog';
@@ -18,7 +18,7 @@ import RightContainer from "./RightContainer";
 import LeftContainer from "./LeftContainer";
 import BottomContainer from "./BottomContainer";
 import MotorCard from "./MotorCard";
-import DetailDialog from './DetailDialog';
+import LastSection from "./LastSection";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -34,13 +34,8 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function FullScreenDialog({open,handleClose,currentLabel}) {
+export default function DetailDialog({open,handleClose,currentLabel}) {
   const classes = useStyles();
-  const [ detailOpen, setDetailOpen ] = useState(false);
-
-  function handleDetailClose(){
-    setDetailOpen(false);
-  }
 
   return (
     <div>
@@ -58,19 +53,11 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
             </Button>
           </Toolbar>
         </AppBar>
-        <List className='flex flex-1 justify-center'>
-            <div className="flex relative">
-              <LeftContainer/>  
-              <MotorCard label={currentLabel} displayBottom/>
-              <RightContainer/>
-              {/* <BottomContainer/> */}
-            </div>
+        <List className='flex flex-1 justify-center mt-12'>
+              <MotorCard label={currentLabel}/>
+              <LastSection/>
         </List>
-        <div className="flex justify-end">
-        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5" onClick={() => setDetailOpen(true)}>More Info</button>
-        </div>
       </Dialog>
-      <DetailDialog open={detailOpen} handleClose={handleDetailClose} currentLabel={currentLabel}/>
     </div>
   );
 }
