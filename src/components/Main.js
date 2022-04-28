@@ -7,6 +7,7 @@ import RightContainer from "./RightContainer";
 import LeftContainer from "./LeftContainer";
 import BottomContainer from "./BottomContainer";
 import DashboardTopSection from "./DashboardTopSection";
+import DashboardBottomSection from "./DashboardBottomSection";
 
 class Main extends React.Component {
   constructor(props) {
@@ -48,9 +49,9 @@ class Main extends React.Component {
     return (
   <div className="space-y-5 h-screen flex">
       <Sidebar />
-      <div className="flex flex-col relative">
+      <div className="flex flex-col relative w-full">
       <DashboardTopSection></DashboardTopSection>
-      <div className="flex flex-1 flex-wrap p-6 justify-evenly ml-48 relative">
+      <div className="flex flex-1 flex-wrap p-6 justify-evenly relative">
       {coolingTower.map((label,index) => {
       return(
         <div className="flex relative">
@@ -63,6 +64,7 @@ class Main extends React.Component {
 })}
 
   </div>
+  <DashboardBottomSection></DashboardBottomSection>
       </div>
       
   <Dialog open={openDialog} handleClose={this.handleClose} currentLabel={this.state.currentLabel}/>

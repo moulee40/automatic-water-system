@@ -32,46 +32,72 @@ class DashboardTopSection extends React.Component {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                {row.name}
+              <TableCell component="th" scope="row" style={{display:'flex'}}>
+               <div style={{minWidth:'70px'}}> {row.name}</div>:<div style={{marginLeft:5}}> {'100'}</div>
               </TableCell>
-              <TableCell align="right">{row.nap1}</TableCell>
+              {/* <TableCell align="right">{row.nap1}</TableCell>
               <TableCell align="right">{row.nap2}</TableCell>
-              <TableCell align="right">{row.nap3}</TableCell>
+              <TableCell align="right">{row.nap3}</TableCell> */}
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
 
-    <div className="flex justify-end absolute left-1/3 top-full ml-14">
+    <div className="flex justify-end absolute left-[20%]" style={{height:'350px'}}>
           <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
-                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[46%] -ml-6' style={{fontSize:'46px'}}/>
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[92%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
       </div>
-      <div className="flex justify-end absolute left-1/3 ml-56 top-full">
+      <div className="flex justify-end absolute left-[19%] ml-28 top-full" style={{height:'145px'}}>
           <div className="border-l-2 border-b-2 border-solid border-black relative mb-10 ">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
-                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[46%] -ml-6' style={{fontSize:'46px'}}/>
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[72%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
       </div>
-      <div className="flex justify-end absolute left-1/3 ml-96 top-full">
+      <div className="flex justify-end absolute left-[47%]" style={{height:'350px'}}>
           <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
-                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[46%] -ml-6' style={{fontSize:'46px'}}/>
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[92%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
       </div>
-
+      <div className="flex justify-end absolute left-[47%] ml-28 top-full" style={{height:'145px'}}>
+          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10 ">
+            <div className="mt-40">
+                
+                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[72%] -ml-6' style={{fontSize:'46px'}}/>
+           </div>
+           </div>
+      </div>
+      <div className="flex justify-end absolute left-[72%]" style={{height:'350px'}}>
+          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
+            <div className="mt-40">
+                
+                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[92%] -ml-6' style={{fontSize:'46px'}}/>
+           </div>
+           </div>
+      </div>
+      <div className="flex justify-end absolute left-[73%] ml-28 top-full" style={{height:'145px'}}>
+          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10 ">
+            <div className="mt-40">
+                
+                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[72%] -ml-6' style={{fontSize:'46px'}}/>
+           </div>
+           </div>
+      </div>
       </div>
    
     );
