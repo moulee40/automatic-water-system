@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router";
 import DetailBox from "./DetailBox";
+import DetailBox1 from "./DetailBox1";
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
@@ -10,7 +11,7 @@ class LeftContainer extends React.Component {
     return (
         <div className="flex relative">
             <div className="relative">
-            <DetailBox rightArrow/>
+            <DetailBox1 rightArrow/>
             <DetailBox rightArrow/>
             <DetailBox rightArrow/>
             <DetailBox rightArrow/>
