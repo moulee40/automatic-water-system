@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
-import DetailBox from "./DetailBox";
+import DetailBox3 from "./DetailBox3";
 import DetailBox1 from "./DetailBox1";
 import DetailBox2 from "./DetailBox2";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
@@ -58,9 +58,9 @@ class RightContainer extends React.Component {
             <DetailBox1 title={'Supply Temp'} value={supplyTempValue} subtitle={'(C)'}/>
           </div>
           <div>
-          <DetailBox />
-          <DetailBox/>
-          <DetailBox/>
+          <DetailBox3 />
+          <DetailBox3/>
+          <DetailBox3/>
           </div>
       </div>
    
