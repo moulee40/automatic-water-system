@@ -54,14 +54,14 @@ class BottomContainer extends React.Component {
     const{blowdownValue,blowdownCondensateValue,blowdownOV,blowdownPV,blowdownCondensateOV,blowdownCondensatePV} = this.state;
     return (
         <div className="flex justify-end absolute top-full left-1/3">
-          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
+          <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
             <div className="mt-40">
                 {blowdownValue===''?<DetailBox title={'Blowdown'} pvValue={blowdownPV} ovValue={blowdownOV}/>:
                                     <DetailBox1 title={'Blowdown'} value={blowdownValue} subtitle={'(m3/h)'}/>}
                 {blowdownCondensateValue===''?<DetailBox title={'Blowdown Condensate'} pvValue={blowdownCondensatePV} ovValue={blowdownCondensateOV}/>:
                                     <DetailBox1 title={'Blowdown Condensate'} value={blowdownCondensateValue} subtitle={'(m3/h)'}/>}
-                <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/>
-                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[10%] left-[-12.5%]' style={{fontSize:'46px'}}/>
+                <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[94%]'/>
+                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[10%] left-[-8.5%]' style={{fontSize:'46px'}}/>
            </div>
            </div>
       </div>

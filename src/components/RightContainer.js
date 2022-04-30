@@ -57,7 +57,7 @@ class RightContainer extends React.Component {
       <div className="flex">
         <div className="space-y-4">
             <DetailBox1 title={'Return Temp'} value={returnTempValue} subtitle={'(C)'}/>
-            <div className="flex w-40 h-28 border-2 border-l-0 border-solid border-black rounded-none relative">
+            <div className="flex w-40 h-28 border-2 border-l-0 border-solid border-gray-500 rounded-none relative">
             <ArrowForwardIosIcon className='text-blue-600 absolute top-[90%] left-[90%]'/>
             <ArrowBackIosIcon className='text-blue-600 absolute top-[-13%] '/>
             </div>

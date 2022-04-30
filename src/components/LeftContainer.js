@@ -95,19 +95,19 @@ class LeftContainer extends React.Component {
         <div className="flex relative">
             <div className="relative">
            {cleanCondensateValue===''?<DetailBox title={'Clean Condensate'} pvValue={cleanCondensatePV} ovValue={cleanCondensateOV} rightArrow/>:
-                                       <DetailBox1 title={'Clean Condensate'} value={cleanCondensateValue} subtitle={'(m3/h)'}/>} 
+                                       <DetailBox1 title={'Clean Condensate'} value={cleanCondensateValue} subtitle={'(m3/h)'} rightArrow/>} 
             {kwrpValue===''?<DetailBox title={'KWRP'} pvValue={kwrpPV} ovValue={kwrpOV} rightArrow/>:
-                             <DetailBox1 title={'KWRP'} value={kwrpValue} subtitle={'(m3/h)'}/>}
+                             <DetailBox1 title={'KWRP'} value={kwrpValue} subtitle={'(m3/h)'} rightArrow/>}
            {boreValue===''?<DetailBox title={'Bore'} pvValue={borePV} ovValue={boreOV}rightArrow/>:
-                            <DetailBox1 title={'Bore'} value={boreValue} subtitle={'(m3/h)'}/> } 
+                            <DetailBox1 title={'Bore'} value={boreValue} subtitle={'(m3/h)'} rightArrow/> } 
             {schemeValue===''?<DetailBox title={'Scheme'} pvValue={schemePV} ovValue={schemeOV} rightArrow/>:
-                              <DetailBox1 title={'Scheme'} value={schemeValue} subtitle={'(m3/h)'}/> }
+                              <DetailBox1 title={'Scheme'} value={schemeValue} subtitle={'(m3/h)'} rightArrow/> }
             </div>
-            <div className="border-l-2 border-solid border-black relative">
-            {muValue===''?<DetailBox title={'mu'} pvValue={muPV} ovValue={muOV}/>:
-                           <DetailBox1 title={'mu'} value={muValue} subtitle={'(m3/h)'}/>}
-            <div className='w-[11.5rem] border-t-2 border-black border-solid relative mt-11'>
-            <ArrowForwardIosIcon className='text-blue-600 absolute top-[-13px] left-[92%]'/>
+            <div className="border-l-2 border-solid border-gray-500 relative">
+            {muValue===''?<DetailBox title={'mu'} pvValue={muPV} ovValue={muOV} />:
+                           <DetailBox1 title={'mu'} value={muValue} subtitle={'(m3/h)'} />}
+            <div className=' border-t-2 border-gray-500 border-solid relative mt-11 mr-1'>
+            <ArrowForwardIosIcon className='text-blue-600 absolute top-[-13px] left-[94%]'/>
             </div>
             {/* <DetailBox marginTopLg/> */}
             {/* <DetailBox/> */}

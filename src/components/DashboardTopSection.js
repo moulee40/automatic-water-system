@@ -62,7 +62,7 @@ class DashboardTopSection extends React.Component {
     </TableContainer>
 
     <div className="flex justify-end absolute left-[20%]" style={{height:'350px'}}>
-          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
+          <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
@@ -71,7 +71,7 @@ class DashboardTopSection extends React.Component {
            </div>
       </div>
       <div className="flex justify-end absolute left-[19%] ml-28 top-full" style={{height:'145px'}}>
-          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10 ">
+          <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10 ">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
@@ -80,7 +80,7 @@ class DashboardTopSection extends React.Component {
            </div>
       </div>
       <div className="flex justify-end absolute left-[47%]" style={{height:'350px'}}>
-          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
+          <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
@@ -89,7 +89,7 @@ class DashboardTopSection extends React.Component {
            </div>
       </div>
       <div className="flex justify-end absolute left-[47%] ml-28 top-full" style={{height:'145px'}}>
-          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10 ">
+          <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10 ">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
@@ -98,7 +98,7 @@ class DashboardTopSection extends React.Component {
            </div>
       </div>
       <div className="flex justify-end absolute left-[72%]" style={{height:'350px'}}>
-          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
+          <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
@@ -107,7 +107,7 @@ class DashboardTopSection extends React.Component {
            </div>
       </div>
       <div className="flex justify-end absolute left-[73%] ml-28 top-full" style={{height:'145px'}}>
-          <div className="border-l-2 border-b-2 border-solid border-black relative mb-10 ">
+          <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10 ">
             <div className="mt-40">
                 
                 {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}

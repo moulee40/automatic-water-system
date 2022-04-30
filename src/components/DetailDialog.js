@@ -48,15 +48,18 @@ export default function DetailDialog({open,handleClose,currentLabel}) {
             <Typography variant="h6" className={classes.title}>
               Details
             </Typography>
-            <Button color="inherit" onClick={handleClose}>
+            {/* <Button color="inherit" onClick={handleClose}>
               Ok
-            </Button>
+            </Button> */}
           </Toolbar>
         </AppBar>
-        <List className='flex flex-1 justify-center mt-12'>
+          <div className='mt-12 flex flex-1 justify-center'>
               <MotorCard label={currentLabel}/>
               <LastSection/>
-        </List>
+          </div>
+          <div className="flex justify-end">
+        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5" onClick={handleClose}>OK</button>
+        </div>
       </Dialog>
     </div>
   );

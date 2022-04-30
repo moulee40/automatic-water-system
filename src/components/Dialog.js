@@ -53,13 +53,13 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
             <Typography variant="h6" className={classes.title}>
               Details
             </Typography>
-            <Button color="inherit" onClick={handleClose}>
+            {/* <Button color="inherit" onClick={handleClose}>
               Ok
-            </Button>
+            </Button> */}
           </Toolbar>
         </AppBar>
-        <List className='flex flex-1 justify-center'>
-            <div className="flex relative">
+        <List className='flex flex-1 justify-center mt-12'>
+            <div className="flex relative mt-12">
               <LeftContainer name={currentLabel}/>  
               <MotorCard label={currentLabel} displayBottom/>
               <RightContainer name={currentLabel}/>
@@ -67,7 +67,8 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
             </div>
         </List>
         <div className="flex justify-end">
-        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5" onClick={() => setDetailOpen(true)}>More Info</button>
+        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5 mr-0" onClick={() => setDetailOpen(true)}>More Info</button>
+        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5" onClick={handleClose}>OK</button>
         </div>
       </Dialog>
       <DetailDialog open={detailOpen} handleClose={handleDetailClose} currentLabel={currentLabel}/>
