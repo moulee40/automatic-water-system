@@ -38,6 +38,8 @@ class RightContainer extends React.Component {
       //   })
       // }
       this.setState({
+        supplyTempValue:res.data.supply_temp,
+        returnTempValue:res.data.return_temp,
         LMTD1value:res.data.LMTD1,
         LMTD2value:res.data.LMTD2,
         LMTD3value:res.data.LMTD3,
