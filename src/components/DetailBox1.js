@@ -7,7 +7,7 @@ class DetailBox1 extends React.Component {
   render() {
       const {marginTopLg,rightArrow,title,value,subtitle} = this.props;
     return (
-        <div className={`flex w-40 h-28 border-2 border-solid border-black rounded relative m-4 ${marginTopLg ? 'mt-28' :''}`}>
+        <div className={`flex w-64 h-28 border-2 border-solid border-black rounded relative m-4 ${marginTopLg ? 'mt-28' :''}`}>
             <span className="pl-2">{title}
             {subtitle}
             </span>
