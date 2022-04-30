@@ -38,15 +38,19 @@ class RightContainer extends React.Component {
       //   })
       // }
       this.setState({
-        supplyTempValue:res.data.supply_temp,
-        returnTempValue:res.data.return_temp
+        LMTD1value:res.data.LMTD1,
+        LMTD2value:res.data.LMTD2,
+        LMTD3value:res.data.LMTD3,
+        TTD1value:res.data.TTD1,
+        TTD2value:res.data.TTD2,
+        TTD3value:res.data.TTD3
       })
 
      });
   }
 
   render() {
-    const{supplyTempValue,returnTempValue} = this.state;
+    const{supplyTempValue,returnTempValue,LMTD1value,LMTD2value,LMTD3value,TTD1value,TTD2value,TTD3value} = this.state;
     return (
       <div className="flex">
         <div className="space-y-4">
@@ -58,9 +62,9 @@ class RightContainer extends React.Component {
             <DetailBox1 title={'Supply Temp'} value={supplyTempValue} subtitle={'(C)'}/>
           </div>
           <div>
-          <DetailBox3 />
-          <DetailBox3/>
-          <DetailBox3/>
+          <DetailBox3 title={'Hex 1(C)'} LMTDvalue={LMTD1value} TTDvalue={TTD1value}/>
+          <DetailBox3 title={'Hex 2(C)'} LMTDvalue={LMTD2value} TTDvalue={TTD2value}/>
+          <DetailBox3 title={'Hex 3(C)'} LMTDvalue={LMTD3value} TTDvalue={TTD3value}/>
           </div>
       </div>
    
