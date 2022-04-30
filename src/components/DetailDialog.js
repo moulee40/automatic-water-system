@@ -19,6 +19,7 @@ import LeftContainer from "./LeftContainer";
 import BottomContainer from "./BottomContainer";
 import MotorCard from "./MotorCard";
 import LastSection from "./LastSection";
+import CoolingTower from "../img/CoolingTower.png"
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -53,8 +54,8 @@ export default function DetailDialog({open,handleClose,currentLabel}) {
             </Button> */}
           </Toolbar>
         </AppBar>
-          <div className='mt-12 flex flex-1 justify-center'>
-              <MotorCard label={currentLabel}/>
+          <div className='flex flex-1 justify-center items-center'>
+              <img class="object-contain h-48 relative shadow-lg" src={CoolingTower} alt="NIKE AIR"/> 
               <LastSection/>
           </div>
           <div className="flex justify-end">

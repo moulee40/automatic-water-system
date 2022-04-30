@@ -53,7 +53,7 @@ class BottomContainer extends React.Component {
   render() {
     const{blowdownValue,blowdownCondensateValue,blowdownOV,blowdownPV,blowdownCondensateOV,blowdownCondensatePV} = this.state;
     return (
-        <div className="flex justify-end absolute top-full left-1/3">
+        <div className="flex justify-end top-full left-1/3">
           <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
             <div className="mt-40">
                 {blowdownValue===''?<DetailBox title={'Blowdown'} pvValue={blowdownPV} ovValue={blowdownOV}/>:

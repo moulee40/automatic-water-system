@@ -19,6 +19,7 @@ import LeftContainer from "./LeftContainer";
 import BottomContainer from "./BottomContainer";
 import MotorCard from "./MotorCard";
 import DetailDialog from './DetailDialog';
+import CoolingTower from "../img/CoolingTower.png"
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -60,8 +61,12 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
         </AppBar>
         <List className='flex flex-1 justify-center mt-12'>
             <div className="flex relative mt-12">
-              <LeftContainer name={currentLabel}/>  
-              <MotorCard label={currentLabel} displayBottom/>
+              <LeftContainer name={currentLabel}/>
+              <div className='relative'>
+                <img class="object-contain w-full h-48 relative mt-24 shadow-lg" src={CoolingTower} alt="NIKE AIR"/>  
+                <BottomContainer name={currentLabel}/>
+                </div>
+              {/* <MotorCard label={currentLabel} displayBottom/> */}
               <RightContainer name={currentLabel}/>
               {/* <BottomContainer/> */}
             </div>
