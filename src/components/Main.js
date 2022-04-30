@@ -8,23 +8,30 @@ import LeftContainer from "./LeftContainer";
 import BottomContainer from "./BottomContainer";
 import DashboardTopSection from "./DashboardTopSection";
 import DashboardBottomSection from "./DashboardBottomSection";
+import axios from "axios";
+
+const eventBaseUrl = "https://n8meabel9l.execute-api.us-east-2.amazonaws.com/dev/all";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       openDialog : false,
-      currentLabel:''
+      currentLabel:'',
+      data:{},
+      status:[]
     };
   }
 
+  
   componentWillMount() {
-    // if (localStorage.getItem("username") === null) {
-    //   const {
-    //     history: { push },
-    //   } = this.props;
-    //   push("/");
-    // }
+    const{name}=this.props
+    axios.get(eventBaseUrl).then((res) => {
+     this.setState({
+       data:res.data.data,
+       status:res.data.data.status
+     })
+    })
   }
 
   handleLogout = () => {
@@ -44,21 +51,18 @@ class Main extends React.Component {
   }
 
   render() {
-    const {openDialog} = this.state;
-    const coolingTower = ["CT1","CT2","CT3"];
+    const {openDialog,data,status} = this.state;
+    const coolingTower = ["nap1","nap2","nap3"];
     return (
   <div className="space-y-5 h-screen flex">
       <Sidebar />
       <div className="flex flex-col relative w-full">
-      <DashboardTopSection></DashboardTopSection>
+      <DashboardTopSection data={data}></DashboardTopSection>
       <div className="flex flex-1 flex-wrap p-6 justify-evenly relative">
       {coolingTower.map((label,index) => {
       return(
-        <div className="flex relative">
-          {/* <LeftContainer/>   */}
+        <div className={status && status[index]==="ON"?"flex relative":"flex relative pointer-events-none opacity-80"}>
           <MotorCard label={label} onClick={()=>this.openDialog(label)} key={index}/>
-          {/* <RightContainer/>
-          <BottomContainer/> */}
   </div>
   );
 })}

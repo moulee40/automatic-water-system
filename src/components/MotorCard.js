@@ -41,7 +41,7 @@ class MotorCard extends React.Component {
             <h1 class="text-sm font-bold text-white">ON</h1>
             {/* <button class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">ON</button> */}
         </div>
-        {this.props.displayBottom && <BottomContainer/>}
+        {this.props.displayBottom && <BottomContainer name={this.props.label}/>}
     </div>
     );
   }

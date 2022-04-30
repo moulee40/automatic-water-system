@@ -60,9 +60,9 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
         </AppBar>
         <List className='flex flex-1 justify-center'>
             <div className="flex relative">
-              <LeftContainer/>  
+              <LeftContainer name={currentLabel}/>  
               <MotorCard label={currentLabel} displayBottom/>
-              <RightContainer/>
+              <RightContainer name={currentLabel}/>
               {/* <BottomContainer/> */}
             </div>
         </List>

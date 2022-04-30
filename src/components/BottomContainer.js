@@ -1,19 +1,65 @@
 import React from "react";
 import { withRouter } from "react-router";
 import DetailBox from "./DetailBox";
+import DetailBox1 from "./DetailBox1";
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import axios from "axios";
+
+const eventBaseUrl = "https://ouvusj69el.execute-api.us-east-2.amazonaws.com/dev/";
 
 
 class BottomContainer extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      blowdownValue:'',
+      blowdownCondensateValue:'',
+    };
+  }
+
+  componentWillMount() {
+    const{name}=this.props
+    let url= eventBaseUrl+name+"/data"
+    axios.get(url).then((res) => {
+      
+      if(res.data.blowdown && res.data.blowdown.length!==undefined){
+        this.setState({
+          blowdownPV:res.data.blowdown[0],
+          blowdownOV:res.data.blowdown[1],
+        })
+      }
+      else{
+        this.setState({
+          blowdownValue:res.data.blowdown
+        })
+      }
+
+      if(res.data.blowdown_coc && res.data.blowdown_coc.length!==undefined){
+        this.setState({
+          blowdownCondensatePV:res.data.blowdown_coc[0],
+          blowdownCondensateOV:res.data.blowdown_coc[1],
+        })
+      }
+      else{
+        this.setState({
+          blowdownCondensateValue:res.data.blowdown_coc
+        })
+      }
+     });
+  }
+
   render() {
+    const{blowdownValue,blowdownCondensateValue,blowdownOV,blowdownPV,blowdownCondensateOV,blowdownCondensatePV} = this.state;
     return (
         <div className="flex justify-end absolute top-full left-1/3">
           <div className="border-l-2 border-b-2 border-solid border-black relative mb-10">
             <div className="mt-40">
-                <DetailBox/>
-                <DetailBox/>
+                {blowdownValue===''?<DetailBox title={'Blowdown'} pvValue={blowdownPV} ovValue={blowdownOV}/>:
+                                    <DetailBox1 title={'Blowdown'} value={blowdownValue} subtitle={'(m3/h)'}/>}
+                {blowdownCondensateValue===''?<DetailBox title={'Blowdown Condensate'} pvValue={blowdownCondensatePV} ovValue={blowdownCondensateOV}/>:
+                                    <DetailBox1 title={'Blowdown Condensate'} value={blowdownCondensateValue} subtitle={'(m3/h)'}/>}
                 <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/>
                 <KeyboardArrowDownIcon className='text-blue-600 absolute top-[10%] left-[-12.5%]' style={{fontSize:'46px'}}/>
            </div>

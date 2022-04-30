@@ -11,6 +11,7 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
+
 const rows = [
   { name:'KWRP',nap1:'kwrp NAP1',nap2:'kwrp NAP2',nap3: 'kwrp NAP3'},
   { name:'Scheme',nap1:'schemeNap1',nap2:'schemeNap2',nap3: 'schemeNap3'},
@@ -20,26 +21,42 @@ const rows = [
 
 class DashboardTopSection extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      data:[]
+    };
+  }
+
+
   render() {
+    const{data}=this.props;
     return (
         <div className="flex relative">
            <TableContainer component={Paper}>
       <Table sx={{ minWidth: 750 }} aria-label="simple table">
         
         <TableBody>
-          {rows.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
+            <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell component="th" scope="row" style={{display:'flex'}}>
-               <div style={{minWidth:'70px'}}> {row.name}</div>:<div style={{marginLeft:5}}> {'100'}</div>
+               <div style={{minWidth:'70px'}}> KWRP</div>:<div style={{marginLeft:5}}> {data.kwrp}</div>
               </TableCell>
-              {/* <TableCell align="right">{row.nap1}</TableCell>
-              <TableCell align="right">{row.nap2}</TableCell>
-              <TableCell align="right">{row.nap3}</TableCell> */}
             </TableRow>
-          ))}
+            <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+              <TableCell component="th" scope="row" style={{display:'flex'}}>
+               <div style={{minWidth:'70px'}}> Bore</div>:<div style={{marginLeft:5}}> {data.bore}</div>
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+              <TableCell component="th" scope="row" style={{display:'flex'}}>
+               <div style={{minWidth:'70px'}}> Blockdown</div>:<div style={{marginLeft:5}}> {data.blowdown}</div>
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+              <TableCell component="th" scope="row" style={{display:'flex'}}>
+               <div style={{minWidth:'70px'}}> Clean Condensate</div>:<div style={{marginLeft:5}}> {data.cleanCondensate}</div>
+              </TableCell>
+            </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
