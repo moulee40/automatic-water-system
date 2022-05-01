@@ -63,7 +63,10 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
             <div className="flex relative mt-12">
               <LeftContainer name={currentLabel} data={data}/>
               <div className='relative'>
-                <img class="object-contain w-full h-48 relative mt-24 shadow-lg" src={CoolingTower} alt="NIKE AIR"/>  
+                <div className='mt-24'>
+                <p className='text-xl font-bold uppercase text-center'>{currentLabel}</p>  
+                <img class="object-contain w-full h-48 relative  shadow-lg" src={CoolingTower} alt="NIKE AIR"/>  
+                </div>
                 <BottomContainer name={currentLabel} data={data}/>
                 </div>
               {/* <MotorCard label={currentLabel} displayBottom/> */}

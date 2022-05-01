@@ -63,10 +63,11 @@ class Main extends React.Component {
       <Sidebar />
       <div className="flex flex-col relative w-full">
       <DashboardTopSection data={data}></DashboardTopSection>
-      <div className="flex flex-1 flex-wrap p-6 justify-evenly relative">
+      <div className="flex flex-1 flex-wrap p-6 pt-0 justify-evenly relative">
       {coolingTower.map((label,index) => {
       return(
         <div className={status && status[index]==="ON"?"flex relative":"flex relative pointer-events-none opacity-80"}>
+        
           <MotorCard label={label} onClick={()=>this.openDialog(label)} key={index}/>
   </div>
   );
@@ -74,6 +75,12 @@ class Main extends React.Component {
 
   </div>
   <DashboardBottomSection></DashboardBottomSection>
+  <footer class="bg-gray-200 text-center lg:text-left">
+  <div class="text-gray-700 text-center p-4 ">
+    © Copyright 2021, Ariceo :
+    <a class="text-gray-800" href=""> Privacy Terms</a>
+  </div>
+</footer>
       </div>
       
   <Dialog open={openDialog} handleClose={this.handleClose} currentLabel={this.state.currentLabel} data={plantData}/>

@@ -21,7 +21,7 @@ class DashboardBottomSection extends React.Component {
 
   render() {
     return (
-        <div className="flex relative mb-6">
+        <div className="flex relative">
            <TableContainer component={Paper}>
       <Table sx={{ minWidth: 750 }} aria-label="simple table">
         

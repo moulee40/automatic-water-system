@@ -61,11 +61,9 @@ class DashboardTopSection extends React.Component {
       </Table>
     </TableContainer>
 
-    <div className="flex justify-end absolute left-[20%]" style={{height:'350px'}}>
+    {/* <div className="flex justify-end absolute left-[20%]" style={{height:'350px'}}>
           <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
             <div className="mt-40">
-                
-                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
                 <KeyboardArrowDownIcon className='text-blue-600 absolute top-[92%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
@@ -74,7 +72,6 @@ class DashboardTopSection extends React.Component {
           <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10 ">
             <div className="mt-40">
                 
-                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
                 <KeyboardArrowDownIcon className='text-blue-600 absolute top-[72%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
@@ -83,7 +80,6 @@ class DashboardTopSection extends React.Component {
           <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
             <div className="mt-40">
                 
-                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
                 <KeyboardArrowDownIcon className='text-blue-600 absolute top-[92%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
@@ -92,7 +88,6 @@ class DashboardTopSection extends React.Component {
           <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10 ">
             <div className="mt-40">
                 
-                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
                 <KeyboardArrowDownIcon className='text-blue-600 absolute top-[72%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
@@ -101,7 +96,6 @@ class DashboardTopSection extends React.Component {
           <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
             <div className="mt-40">
                 
-                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
                 <KeyboardArrowDownIcon className='text-blue-600 absolute top-[92%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
@@ -110,11 +104,10 @@ class DashboardTopSection extends React.Component {
           <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10 ">
             <div className="mt-40">
                 
-                {/* <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[91%]'/> */}
                 <KeyboardArrowDownIcon className='text-blue-600 absolute top-[72%] -ml-6' style={{fontSize:'46px'}}/>
            </div>
            </div>
-      </div>
+      </div> */}
       </div>
    
     );
