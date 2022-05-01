@@ -8,6 +8,7 @@ import LeftContainer from "./LeftContainer";
 import BottomContainer from "./BottomContainer";
 import DashboardTopSection from "./DashboardTopSection";
 import DashboardBottomSection from "./DashboardBottomSection";
+import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import axios from "axios";
 
 const eventBaseUrl = "https://n8meabel9l.execute-api.us-east-2.amazonaws.com/dev/all";
@@ -66,8 +67,12 @@ class Main extends React.Component {
       <div className="flex flex-1 flex-wrap p-6 pt-0 justify-evenly relative">
       {coolingTower.map((label,index) => {
       return(
-        <div className={status && status[index]==="ON"?"flex relative":"flex relative pointer-events-none opacity-80"}>
-        
+        <div className={status && status[index]==="ON"?"flex flex-col relative":"flex flex-col relative pointer-events-none opacity-80"}>
+          <div className="flex flex-1 justify-center">
+            <div className='border-l-2 border-solid border-gray-500 relative'>
+            <KeyboardArrowDownIcon className='text-blue-600 absolute bottom-[-15px] left-[-24px]' style={{fontSize:'46px'}}/>
+            </div>
+          </div>
           <MotorCard label={label} onClick={()=>this.openDialog(label)} key={index}/>
   </div>
   );
