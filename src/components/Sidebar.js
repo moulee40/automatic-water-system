@@ -25,7 +25,7 @@ class Sidebar extends React.Component {
   render() {
     return (
         <div class="flex flex-col w-64 h-screen px-4 py-8 bg-white border-r dark:bg-gray-800 dark:border-gray-600" style={{width:'20%'}}>
-        <h2 class="text-3xl font-semibold text-gray-800 dark:text-white">Water System</h2>
+        <h2 class="text-3xl font-semibold text-gray-800 dark:text-white">Water Plant Monitor System</h2>
 {/* 
         <div class="relative mt-6">
             <span class="absolute inset-y-0 left-0 flex items-center pl-3">

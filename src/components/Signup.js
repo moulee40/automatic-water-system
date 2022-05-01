@@ -88,7 +88,7 @@ class Signup extends React.Component {
     return (
      
       <div className="flex flex-col">
-      <div className="flex justify-center p-4 text-5xl text-white bg-blue-500 shadow-md font-medium ">Automatic Water System</div>
+      <div className="flex justify-center p-4 text-5xl text-white bg-blue-500 shadow-md font-medium ">Water Plant Monitor System</div>
       <div className={`flex flex-col space-y-5 max-w-md mx-auto my-16 w-1/2  px-8 py-16 shadow-2xl`}>
       <div className="flex items-center justify-center pb-8">
         <h2 className={`text-4xl font-semibold`}>Signup</h2>
