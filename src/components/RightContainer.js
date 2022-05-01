@@ -21,9 +21,9 @@ class RightContainer extends React.Component {
   }
 
   componentWillMount() {
-    const{name}=this.props
-    let url= eventBaseUrl+name+"/data"
-    axios.get(url).then((res) => {
+    const{data}=this.props
+    // let url= eventBaseUrl+name+"/data"
+    // axios.get(url).then((res) => {
       
       // if(res.data.kwrp.length!==undefined){
       //   this.setState({
@@ -38,17 +38,17 @@ class RightContainer extends React.Component {
       //   })
       // }
       this.setState({
-        supplyTempValue:res.data.supply_temp,
-        returnTempValue:res.data.return_temp,
-        LMTD1value:res.data.LMTD1,
-        LMTD2value:res.data.LMTD2,
-        LMTD3value:res.data.LMTD3,
-        TTD1value:res.data.TTD1,
-        TTD2value:res.data.TTD2,
-        TTD3value:res.data.TTD3
+        supplyTempValue:data.supply_temp,
+        returnTempValue:data.return_temp,
+        LMTD1value:data.LMTD1,
+        LMTD2value:data.LMTD2,
+        LMTD3value:data.LMTD3,
+        TTD1value:data.TTD1,
+        TTD2value:data.TTD2,
+        TTD3value:data.TTD3
       })
 
-     });
+    //  });
   }
 
   render() {

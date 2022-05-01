@@ -20,34 +20,34 @@ class BottomContainer extends React.Component {
   }
 
   componentWillMount() {
-    const{name}=this.props
-    let url= eventBaseUrl+name+"/data"
-    axios.get(url).then((res) => {
+    const{data}=this.props
+    // let url= eventBaseUrl+name+"/data"
+    // axios.get(url).then((res) => {
       
-      if(res.data.blowdown && res.data.blowdown.length!==undefined){
+      if(data.blowdown && data.blowdown.length!==undefined){
         this.setState({
-          blowdownPV:res.data.blowdown[0],
-          blowdownOV:res.data.blowdown[1],
+          blowdownPV:data.blowdown[0],
+          blowdownOV:data.blowdown[1],
         })
       }
       else{
         this.setState({
-          blowdownValue:res.data.blowdown
+          blowdownValue:data.blowdown
         })
       }
 
-      if(res.data.blowdown_coc && res.data.blowdown_coc.length!==undefined){
+      if(data.blowdown_coc && data.blowdown_coc.length!==undefined){
         this.setState({
-          blowdownCondensatePV:res.data.blowdown_coc[0],
-          blowdownCondensateOV:res.data.blowdown_coc[1],
+          blowdownCondensatePV:data.blowdown_coc[0],
+          blowdownCondensateOV:data.blowdown_coc[1],
         })
       }
       else{
         this.setState({
-          blowdownCondensateValue:res.data.blowdown_coc
+          blowdownCondensateValue:data.blowdown_coc
         })
       }
-     });
+    //  });
   }
 
   render() {

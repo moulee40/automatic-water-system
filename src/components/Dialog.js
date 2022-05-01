@@ -35,7 +35,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function FullScreenDialog({open,handleClose,currentLabel}) {
+export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
   const classes = useStyles();
   const [ detailOpen, setDetailOpen ] = useState(false);
 
@@ -61,13 +61,14 @@ export default function FullScreenDialog({open,handleClose,currentLabel}) {
         </AppBar>
         <List className='flex flex-1 justify-center mt-12'>
             <div className="flex relative mt-12">
-              <LeftContainer name={currentLabel}/>
+              <LeftContainer name={currentLabel} data={data}/>
               <div className='relative'>
                 <img class="object-contain w-full h-48 relative mt-24 shadow-lg" src={CoolingTower} alt="NIKE AIR"/>  
-                <BottomContainer name={currentLabel}/>
+                <BottomContainer name={currentLabel} data={data}/>
                 </div>
               {/* <MotorCard label={currentLabel} displayBottom/> */}
-              <RightContainer name={currentLabel}/>
+              <RightContainer name={currentLabel}  data={data}/>
+
               {/* <BottomContainer/> */}
             </div>
         </List>

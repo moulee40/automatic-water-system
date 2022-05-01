@@ -11,6 +11,7 @@ import DashboardBottomSection from "./DashboardBottomSection";
 import axios from "axios";
 
 const eventBaseUrl = "https://n8meabel9l.execute-api.us-east-2.amazonaws.com/dev/all";
+const plantDataUrl = "https://ouvusj69el.execute-api.us-east-2.amazonaws.com/dev/";
 
 class Main extends React.Component {
   constructor(props) {
@@ -19,7 +20,8 @@ class Main extends React.Component {
       openDialog : false,
       currentLabel:'',
       data:{},
-      status:[]
+      status:[],
+      plantData:{}
     };
   }
 
@@ -43,15 +45,18 @@ class Main extends React.Component {
   };
 
   openDialog = (label) =>{
-    this.setState({openDialog:true,currentLabel:label})
-  }
+    let url= plantDataUrl+label+"/data"
+    axios.get(url).then((res) => {
+    this.setState({openDialog:true,currentLabel:label,plantData:res.data})
+  })
+}
 
   handleClose = () =>{
     this.setState({openDialog:false})
   }
 
   render() {
-    const {openDialog,data,status} = this.state;
+    const {openDialog,data,status,plantData} = this.state;
     const coolingTower = ["nap1","nap2","nap3"];
     return (
   <div className="space-y-5 h-screen flex">
@@ -71,7 +76,7 @@ class Main extends React.Component {
   <DashboardBottomSection></DashboardBottomSection>
       </div>
       
-  <Dialog open={openDialog} handleClose={this.handleClose} currentLabel={this.state.currentLabel}/>
+  <Dialog open={openDialog} handleClose={this.handleClose} currentLabel={this.state.currentLabel} data={plantData}/>
       </div>
     );
   }

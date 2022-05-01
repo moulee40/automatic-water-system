@@ -22,70 +22,70 @@ class LeftContainer extends React.Component {
   }
 
   componentWillMount() {
-    const{name}=this.props
-    let url= eventBaseUrl+name+"/data"
-    axios.get(url).then((res) => {
-      if(res.data.kwrp.length!==undefined){
+    const{data}=this.props
+    // let url= eventBaseUrl+name+"/data"
+    // axios.get(url).then((res) => {
+      if(data.kwrp.length!==undefined){
         this.setState({
-          kwrpPV:res.data.kwrp[0],
-          kwrpOV:res.data.kwrp[1],
+          kwrpPV:data.kwrp[0],
+          kwrpOV:data.kwrp[1],
         })
       }
       else{
         this.setState({
-          kwrpValue:res.data.kwrp
+          kwrpValue:data.kwrp
         })
       }
 
-      if(res.data.clean_condensate.length!==undefined){
+      if(data.clean_condensate.length!==undefined){
         this.setState({
-          cleanCondensatePV:res.data.clean_condensate[0],
-          cleanCondensateOV:res.data.clean_condensate[1],
+          cleanCondensatePV:data.clean_condensate[0],
+          cleanCondensateOV:data.clean_condensate[1],
         })
       }
       else{
         this.setState({
-          cleanCondensateValue:res.data.clean_condensate
+          cleanCondensateValue:data.clean_condensate
         })
       }
 
-      if(res.data.scheme.length!==undefined){
+      if(data.scheme.length!==undefined){
         this.setState({
-          schemePV:res.data.scheme[0],
-          schemeOV:res.data.scheme[1],
+          schemePV:data.scheme[0],
+          schemeOV:data.scheme[1],
         })
       }
       else{
         this.setState({
-         schemeValue:res.data.scheme
+         schemeValue:data.scheme
         })
       }
 
-      if(res.data.tamala.length!==undefined){
+      if(data.tamala.length!==undefined){
         this.setState({
-          borePV:res.data.tamala[0],
-          boreOV:res.data.tamala[1],
+          borePV:data.tamala[0],
+          boreOV:data.tamala[1],
         })
       }
       else{
         this.setState({
-        boreValue:res.data.tamala
+        boreValue:data.tamala
         })
       }
 
-      if(res.data.mu_flow.length!==undefined){
+      if(data.mu_flow.length!==undefined){
         this.setState({
-          muPV:res.data.mu_flow[0],
-          muOV:res.data.mu_flow[1],
+          muPV:data.mu_flow[0],
+          muOV:data.mu_flow[1],
         })
       }
       else{
         this.setState({
-        muValue:res.data.mu_flow
+        muValue:data.mu_flow
         })
       }
 
-     });
+    //  });
   }
 
   render() {
