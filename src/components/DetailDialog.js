@@ -20,6 +20,8 @@ import BottomContainer from "./BottomContainer";
 import MotorCard from "./MotorCard";
 import LastSection from "./LastSection";
 import CoolingTower from "../img/CoolingTower.png"
+import LastTopSection from './LastTopSection';
+import LastBottomSection from './LastBottomSection';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -54,9 +56,15 @@ export default function DetailDialog({open,handleClose,currentLabel}) {
             </Button> */}
           </Toolbar>
         </AppBar>
-          <div className='flex flex-1 justify-center items-center'>
+          <div className='flex flex-col flex-1'>
+            <LastTopSection/>
+            <div className='flex justify-center items-center'>
               <img class="object-contain h-48 relative shadow-lg" src={CoolingTower} alt="NIKE AIR"/> 
               <LastSection/>
+            </div>
+            <div className='flex justify-center'>
+            <LastBottomSection/>
+            </div>
           </div>
           <div className="flex justify-end">
         <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5" onClick={handleClose}>OK</button>
