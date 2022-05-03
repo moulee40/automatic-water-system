@@ -37,7 +37,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function DetailDialog({open,handleClose,currentLabel}) {
+export default function DetailDialog({open,handleClose,currentLabel,data}) {
   const classes = useStyles();
 
   return (
@@ -57,13 +57,13 @@ export default function DetailDialog({open,handleClose,currentLabel}) {
           </Toolbar>
         </AppBar>
           <div className='flex flex-col flex-1'>
-            <LastTopSection/>
+            <LastTopSection data={data}/>
             <div className='flex justify-center items-center'>
               <img class="object-contain h-48 relative shadow-lg" src={CoolingTower} alt="NIKE AIR"/> 
-              <LastSection/>
+              <LastSection data={data}/>
             </div>
             <div className='flex justify-center'>
-            <LastBottomSection/>
+            <LastBottomSection data={data}/>
             </div>
           </div>
           <div className="flex justify-end">

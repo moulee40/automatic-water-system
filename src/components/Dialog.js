@@ -80,7 +80,7 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
         <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5" onClick={handleClose}>OK</button>
         </div>
       </Dialog>
-      <DetailDialog open={detailOpen} handleClose={handleDetailClose} currentLabel={currentLabel}/>
+      <DetailDialog open={detailOpen} handleClose={handleDetailClose} currentLabel={currentLabel} data={data}/>
     </div>
   );
 }
