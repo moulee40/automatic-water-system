@@ -58,8 +58,8 @@ class RightContainer extends React.Component {
         <div className="space-y-4">
             <DetailBox1 title={'Return Temp'} value={returnTempValue} subtitle={'(C)'} rounded/>
             <div className="flex w-40 h-28 border-2 border-l-0 border-solid border-gray-500 rounded-none relative">
-            <ArrowForwardIosIcon className='text-blue-600 absolute top-[90%] left-[90%]'/>
-            <ArrowBackIosIcon className='text-blue-600 absolute top-[-13%] '/>
+            <ArrowForwardIosIcon className='absolute top-[90%] left-[90%]' style={{color: '#01add1'}}/>
+            <ArrowBackIosIcon className='absolute top-[-13%]' style={{color: '#01add1'}}/>
             </div>
             <DetailBox1 title={'Supply Temp'} value={supplyTempValue} subtitle={'(C)'} rounded/>
           </div>

@@ -46,7 +46,7 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
   return (
     <div>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-        <AppBar className={classes.appBar}>
+        <AppBar className={classes.appBar} style={{backgroundColor:'#017781'}}>
           <Toolbar>
             <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
               <CloseIcon />
@@ -63,8 +63,8 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
             <div className="flex relative mt-12">
               <LeftContainer name={currentLabel} data={data}/>
               <div className='relative'>
-                <div className='mt-24'>
-                <p className='text-xl font-bold uppercase text-center'>{currentLabel}</p>  
+                <div className='mt-24 border-2 border-solid border-gray-200 rounded-lg' style={{backgroundColor:'#017781'}}>
+                <p className='text-xl text-white font-bold uppercase text-center'>{currentLabel}</p>  
                 <img class="object-contain w-full h-48 relative  shadow-lg" src={CoolingTower} alt="NIKE AIR"/>  
                 </div>
                 <BottomContainer name={currentLabel} data={data}/>
@@ -75,9 +75,9 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
               {/* <BottomContainer/> */}
             </div>
         </List>
-        <div className="flex justify-end">
-        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5 mr-0" onClick={() => setDetailOpen(true)}>More Info</button>
-        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5" onClick={handleClose}>OK</button>
+        <div className="flex justify-end" style={{backgroundColor:'#17132a'}}>
+        <button class=" text-white font-bold py-2 px-4 rounded m-5 mr-0" style={{backgroundColor:'#017781'}} onClick={() => setDetailOpen(true)}>More Info</button>
+        <button class=" text-white font-bold py-2 px-4 rounded m-5" style={{backgroundColor:'#017781'}} onClick={handleClose}>OK</button>
         </div>
       </Dialog>
       <DetailDialog open={detailOpen} handleClose={handleDetailClose} currentLabel={currentLabel} data={data}/>

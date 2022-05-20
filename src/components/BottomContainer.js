@@ -60,8 +60,8 @@ class BottomContainer extends React.Component {
                                     <DetailBox1 title={'Blowdown'} value={blowdownValue} subtitle={'(m3/h)'}/>}
                 {blowdownCondensateValue===''?<DetailBox title={'Blowdown Condensate'} pvValue={blowdownCondensatePV} ovValue={blowdownCondensateOV}/>:
                                     <DetailBox1 title={'Blowdown Condensate'} value={blowdownCondensateValue} subtitle={'(m3/h)'}/>}
-                <ArrowForwardIosIcon className='text-blue-600 absolute top-[97.3%] left-[94%]'/>
-                <KeyboardArrowDownIcon className='text-blue-600 absolute top-[10%] left-[-8.5%]' style={{fontSize:'46px'}}/>
+                <ArrowForwardIosIcon className='absolute top-[97.3%] left-[94%]' style={{color: '#01add1'}}/>
+                <KeyboardArrowDownIcon className='absolute top-[10%] left-[-8.5%]' style={{fontSize:'46px',color: '#01add1'}} />
            </div>
            </div>
       </div>

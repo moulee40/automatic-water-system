@@ -111,7 +111,7 @@ class LeftContainer extends React.Component {
             {muValue===''?<DetailBox title={'mu'} pvValue={muPV} ovValue={muOV} />:
                            <DetailBox1 title={'mu'} value={muValue} subtitle={'(m3/h)'} />}
             <div className=' border-t-2 border-gray-500 border-solid relative mt-11 mr-1'>
-            <ArrowForwardIosIcon className='text-blue-600 absolute top-[-13px] left-[94%]'/>
+            <ArrowForwardIosIcon className='absolute top-[-13px] left-[94%]' style={{color: '#01add1'}} />
             </div>
             {/* <DetailBox marginTopLg/> */}
             {/* <DetailBox/> */}
