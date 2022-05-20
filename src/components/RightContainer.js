@@ -56,12 +56,12 @@ class RightContainer extends React.Component {
     return (
       <div className="flex">
         <div className="space-y-4">
-            <DetailBox1 title={'Return Temp'} value={returnTempValue} subtitle={'(C)'}/>
+            <DetailBox1 title={'Return Temp'} value={returnTempValue} subtitle={'(C)'} rounded/>
             <div className="flex w-40 h-28 border-2 border-l-0 border-solid border-gray-500 rounded-none relative">
             <ArrowForwardIosIcon className='text-blue-600 absolute top-[90%] left-[90%]'/>
             <ArrowBackIosIcon className='text-blue-600 absolute top-[-13%] '/>
             </div>
-            <DetailBox1 title={'Supply Temp'} value={supplyTempValue} subtitle={'(C)'}/>
+            <DetailBox1 title={'Supply Temp'} value={supplyTempValue} subtitle={'(C)'} rounded/>
           </div>
           <div>
           <DetailBox3 title={'Hex 1(C)'} LMTDvalue={LMTD1value} TTDvalue={TTD1value}/>

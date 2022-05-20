@@ -59,7 +59,7 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
             </Button> */}
           </Toolbar>
         </AppBar>
-        <List className='flex flex-1 justify-center mt-12'>
+        <List className='flex flex-1 justify-center mt-12' style={{backgroundColor:'#17132a'}}>
             <div className="flex relative mt-12">
               <LeftContainer name={currentLabel} data={data}/>
               <div className='relative'>
