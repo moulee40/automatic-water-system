@@ -88,56 +88,64 @@ class Signup extends React.Component {
     return (
      
       <div className="flex flex-col">
-      <div className="flex justify-center p-4 text-5xl text-white bg-blue-500 shadow-md font-medium ">Water Plant Monitor System</div>
+      {/* <div className="flex justify-center p-4 text-5xl text-white bg-blue-500 shadow-md font-medium ">Water Plant Monitor System</div> */}
+      <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
       <div className={`flex flex-col space-y-5 max-w-md mx-auto my-16 w-1/2  px-8 py-16 shadow-2xl`}>
       <div className="flex items-center justify-center pb-8">
-        <h2 className={`text-4xl font-semibold`}>Signup</h2>
+        <h2 id="title" className={`text-4xl font-semibold`}>SIGNUP</h2>
       </div>
         <TextField
           required
           id="outlined-username"
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
           value={employeeId}
-          label="Employee ID"
+          placeholder="Employee ID"
           autoComplete="off"
           onChange={(e) => this.handleEmployeeIdChange(e)}
         />
         <TextField
           required
           id="outlined-email"
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
           value={username}
-          label="User Name"
+          placeholder="User Name"
           onChange={(e) => this.handleUsernameChange(e)}
         />
         <TextField
           value={password}
           required
           id="outlined-password-input"
-          label="Password"
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
+          placeholder="Password"
           type="password"
           onChange={(e) => this.handlePasswordChange(e)}
         />
         <TextField
           required
           id="outlined-phone"
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
           value={phone}
-          label="Phone Number"
+          placeholder="Phone Number"
           onChange={(e) => this.handlePhoneChange(e)}
         />
         <TextField
           required
           id="outlined-phone"
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
           value={email}
-          label="Email ID"
+          placeholder="Email ID"
           onChange={(e) => this.handleEmailChange(e)}
         />
         
         <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}>
-          <Button variant="contained" style={{backgroundColor:'#2b82f6'}} onClick={this.handleSubmit}>
+          <Button variant="contained" style={{backgroundColor:'#017781'}} onClick={this.handleSubmit}>
             Submit
           </Button>
           <div style={{display:'flex'}}>
-            <p className="text-lg">Existing User?</p>
-            <Link to="/" className="text-blue-500 font-semibold text-lg px-1">
+            <p className="text-lg text-white">Existing User?</p>
+            <Link id="title" to="/" className="text-blue-500 font-semibold text-lg px-1">
               Login
             </Link>
           </div>

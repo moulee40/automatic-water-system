@@ -14,7 +14,11 @@ class MainLogin extends React.Component {
   render() {
     return (
       <div className="flex flex-col">
-      <div className="flex justify-center p-4 text-5xl text-white bg-blue-500 shadow-md font-medium ">Water Plant Monitor System</div>
+        <div id="stars"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
+       {/* <div id='title' className="flex justify-center p-4 text-5xl font-medium ">
+         <span>Water Plant Monitor System</span></div> */}
       <div className="flex mx-auto min-w-full">
           <Login type=""></Login>
       </div>

@@ -90,33 +90,33 @@ class Login extends React.Component {
     const {type} = this.props;
     const isAdmin = type === 'Admin';
     return (
-      <div className={`flex flex-col space-y-5 max-w-md mx-auto my-16 w-1/2 ${isAdmin ? 'bg-blue-500':''} px-8 py-16 shadow-2xl`}>
+      <div className={`flex flex-col space-y-5 max-w-md mx-auto my-16 w-1/2 px-8 py-16 shadow-2xl`}>
         <div className="flex items-center justify-center pb-8">
-          <h2 className={`text-4xl font-semibold ${isAdmin ? 'text-white':'text-blue-500'}`}>Login</h2>
+          <h2 id="title" className={`text-4xl font-semibold `}>LOGIN</h2>
         </div>
         <TextField
           value={username}
           required
-          style={{backgroundColor:'#fff'}}
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
           id="outlined-required"
-          label="Username"
+          placeholder="User Name"
           onChange={(e) => this.handleUsernameChange(e)}
         />
         <TextField
           id="outlined-password-input"
           required
-          style={{backgroundColor:'#fff'}}
-          label="Password"
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
+          placeholder="Password"
           type="password"
           value={password}
           onChange={(e) => this.handlePasswordChange(e)}
         />
-        <Button variant="contained" onClick={this.handleLogin} style={isAdmin?{backgroundColor:'#fff',color:'#2b82f6'}:{backgroundColor:'#2b82f6'}}>
+        <Button variant="contained" onClick={this.handleLogin} style={{backgroundColor:'#017781'}}>
           Login
         </Button>
-        <Link
+        <Link id="title"
               to={isAdmin ? "/signup": "/signup"}
-              className={`${isAdmin ? 'text-white ':'text-blue-500'} font-semibold text-lg px-1 underline`}
+              className={`font-semibold text-lg px-1 underline`}
             >
               Sign up
             </Link>
