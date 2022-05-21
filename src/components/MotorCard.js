@@ -28,7 +28,9 @@ class MotorCard extends React.Component {
 
   render() {
     return (
-        <div class="max-w-xs bg-white rounded-lg shadow-lg cursor-pointer dark:bg-gray-800 max-h-[176px] min-w-[9rem] relative" onClick={this.props.onClick}>
+        <div class="max-w-xs bg-white rounded-lg shadow-lg cursor-pointer dark:bg-gray-800 max-h-[176px] min-w-[9rem] relative
+        transition ease-in-out delay-100 hover:scale-110 duration-300" 
+        onClick={this.props.onClick}>
         <div class="px-4 py-2">
             <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">{this.props.label}</h1>
             {/* <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quos quidem sequi illum facere recusandae voluptatibus</p> */}

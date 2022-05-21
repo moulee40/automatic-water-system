@@ -22,7 +22,7 @@ class DashboardBottomSection extends React.Component {
   render() {
     return (
         <div className="flex relative">
-           <TableContainer component={Paper}>
+           <TableContainer component={Paper} style={{background:'linear-gradient(90deg, rgba(81,180,151,1) 0%, rgba(50,181,175,1) 35%, rgba(1,173,209,1) 100%)',color:'#19435c',fontWeight:'500'}}>
       <Table sx={{ minWidth: 750 }} aria-label="simple table">
         
         <TableBody>

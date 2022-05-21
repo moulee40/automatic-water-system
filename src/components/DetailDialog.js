@@ -43,7 +43,7 @@ export default function DetailDialog({open,handleClose,currentLabel,data}) {
   return (
     <div>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
-        <AppBar className={classes.appBar}>
+        <AppBar className={classes.appBar} style={{backgroundColor:'#017781'}}>
           <Toolbar>
             <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
               <CloseIcon />
@@ -56,6 +56,7 @@ export default function DetailDialog({open,handleClose,currentLabel,data}) {
             </Button> */}
           </Toolbar>
         </AppBar>
+        <div style={{background:'radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%)'}}>
           <div className='flex flex-col flex-1'>
             <LastTopSection data={data}/>
             <div className='flex justify-center items-center'>
@@ -67,7 +68,8 @@ export default function DetailDialog({open,handleClose,currentLabel,data}) {
             </div>
           </div>
           <div className="flex justify-end">
-        <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-4 rounded m-5" onClick={handleClose}>OK</button>
+        <button style={{backgroundColor:'#017781'}} class=" text-white font-bold py-2 px-4 rounded m-5" onClick={handleClose}>OK</button>
+        </div>
         </div>
       </Dialog>
     </div>

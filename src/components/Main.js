@@ -60,19 +60,19 @@ class Main extends React.Component {
     const {openDialog,data,status,plantData} = this.state;
     const coolingTower = ["nap1","nap2","nap3"];
     return (
-  <div className="space-y-5 h-screen flex">
+  <div className="h-screen flex">
       <Sidebar />
       <div className="flex flex-col relative w-full">
       <DashboardTopSection data={data}></DashboardTopSection>
-      <div className="flex flex-1 flex-wrap p-6 pt-0 justify-evenly relative">
+      <div className="flex flex-1 flex-wrap p-6 pt-0 justify-evenly items-center relative">
       {coolingTower.map((label,index) => {
       return(
         <div className={status && status[index]==="ON"?"flex flex-col relative":"flex flex-col relative pointer-events-none opacity-80"}>
-          <div className="flex flex-1 justify-center">
+          {/* <div className="flex flex-1 justify-center">
             <div className='border-l-2 border-solid border-gray-500 relative'>
             <KeyboardArrowDownIcon className='text-blue-600 absolute bottom-[-15px] left-[-24px]' style={{fontSize:'46px'}}/>
             </div>
-          </div>
+          </div> */}
           <MotorCard label={label} onClick={()=>this.openDialog(label)} key={index}/>
   </div>
   );
@@ -80,10 +80,10 @@ class Main extends React.Component {
 
   </div>
   <DashboardBottomSection></DashboardBottomSection>
-  <footer class="bg-gray-200 text-center lg:text-left">
-  <div class="text-gray-700 text-center p-4 ">
+  <footer class="text-center lg:text-left" >
+  <div class="text-white text-center p-4 ">
     © Copyright 2021, Ariceo :
-    <a class="text-gray-800" href=""> Privacy Terms</a>
+    <a class="text-white" href=""> Privacy Terms</a>
   </div>
 </footer>
       </div>

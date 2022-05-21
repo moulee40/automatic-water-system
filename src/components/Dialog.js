@@ -59,7 +59,8 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
             </Button> */}
           </Toolbar>
         </AppBar>
-        <List className='flex flex-1 justify-center mt-12' style={{backgroundColor:'#17132a'}}>
+        <div style={{background:'radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%)'}}>
+        <List className='flex flex-1 justify-center mt-12'>
             <div className="flex relative mt-12">
               <LeftContainer name={currentLabel} data={data}/>
               <div className='relative'>
@@ -75,9 +76,10 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
               {/* <BottomContainer/> */}
             </div>
         </List>
-        <div className="flex justify-end" style={{backgroundColor:'#17132a'}}>
+        <div className="flex justify-end" >
         <button class=" text-white font-bold py-2 px-4 rounded m-5 mr-0" style={{backgroundColor:'#017781'}} onClick={() => setDetailOpen(true)}>More Info</button>
         <button class=" text-white font-bold py-2 px-4 rounded m-5" style={{backgroundColor:'#017781'}} onClick={handleClose}>OK</button>
+        </div>
         </div>
       </Dialog>
       <DetailDialog open={detailOpen} handleClose={handleDetailClose} currentLabel={currentLabel} data={data}/>
