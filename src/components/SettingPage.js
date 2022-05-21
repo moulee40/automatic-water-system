@@ -149,7 +149,7 @@ class SettingPage extends React.Component {
        
       <Sidebar />
       <div style={{width: '100%',height:'85%', paddingRight:250, paddingLeft:250 }}>
-      <DataGrid 
+      <DataGrid style={{backgroundColor:'white'}}
         rows={this.state.dataList}
         columns={columns}
         experimentalFeatures={{ newEditingApi: true }}
@@ -167,7 +167,7 @@ class SettingPage extends React.Component {
       />
      { isEditable &&
       <div style={{display:'flex',justifyContent:'flex-end',marginTop:'20px'}}>
-      <Button variant="contained" onClick={this.handleSubmit}>Submit</Button>
+      <Button variant="contained"  style={{backgroundColor:'#017781'}} onClick={this.handleSubmit}>Submit</Button>
       </div>}
       
       

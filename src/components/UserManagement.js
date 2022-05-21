@@ -132,7 +132,7 @@ class UserManagement extends React.Component {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  style={{ minWidth: column.minWidth ,fontWeight:700}}
                 >
                   {column.label}
                 </TableCell>

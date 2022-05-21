@@ -126,13 +126,14 @@ class AccountPage extends React.Component {
     <Sidebar />
     <div className={`flex flex-col space-y-5 max-w-md mx-auto my-16 w-1/2  px-8 py-16 `}>
       <div className="flex items-center pb-4">
-        <h3 className={`text-4xl font-semibold`}>User Details</h3>
+        <h3 id="title" className={`text-4xl font-semibold`}>User Details</h3>
       </div>
         <TextField
           
           id="outlined-username"
           value={employeeId}
-          label="Employee ID"
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
+          placeholder="Employee ID"
           autoComplete="off"
           disabled
           // onChange={(e) => this.handleEmployeeIdChange(e)}
@@ -141,36 +142,40 @@ class AccountPage extends React.Component {
           
           id="outlined-email"
           value={username}
-          label="User Name"
+          placeholder="User Name"
           disabled
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
           // onChange={(e) => this.handleUsernameChange(e)}
         />
         <TextField
           value={password}
           required
           id="outlined-password-input"
-          label="Password"
+          // label="Password"
           type="password"
           placeholder="********"
           onChange={(e) => this.handlePasswordChange(e)}
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
         />
         <TextField
           required
           id="outlined-phone"
           value={phone}
-          label="Phone Number"
+          placeholder="Phone Number"
           onChange={(e) => this.handlePhoneChange(e)}
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
         />
         <TextField
           required
           id="outlined-phone"
           value={email}
-          label="Email ID"
+          placeholder="Email ID"
           onChange={(e) => this.handleEmailChange(e)}
+          style={{backgroundColor:'#fff',borderRadius:'5px'}}
         />
         
         <div className="flex items-center" style={{justifyContent:'flex-end'}}>
-          <Button variant="contained" style={{backgroundColor:'#2b82f6'}} onClick={this.handleSubmit}>
+          <Button variant="contained" style={{backgroundColor:'#017781'}} onClick={this.handleSubmit}>
             Update
           </Button>
           
