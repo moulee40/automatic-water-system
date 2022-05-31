@@ -38,18 +38,19 @@ class DashboardTopSection extends React.Component {
         
         <TableBody>
             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'8px solid white'}}>
+              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'16px solid #ffffff'}}>
                <div style={{minWidth:'70px'}}> KWRP</div>:<div style={{marginLeft:5}}> {data.kwrp}</div>
               </TableCell>
             </TableRow>
             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'8px solid yellow'}}>
+              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'16px solid #fcd34d'}}>
                <div style={{minWidth:'70px'}}> Bore</div>:<div style={{marginLeft:5}}> {data.bore}</div>
               </TableCell>
             </TableRow>
             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'8px solid red'}}>
+              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'16px solid #ef4444',position: 'relative'}}>
                <div style={{minWidth:'70px'}}> Clean Condensate</div>:<div style={{marginLeft:5}}> {data.cleanCondensate}</div>
+               {/* <div className='border-l-8 border-solid border-red-500 absolute top-full h-52 left-1/3'></div> */}
               </TableCell>
             </TableRow>
             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
