@@ -53,15 +53,15 @@ class BottomContainer extends React.Component {
   render() {
     const{blowdownValue,blowdownCondensateValue,blowdownOV,blowdownPV,blowdownCondensateOV,blowdownCondensatePV} = this.state;
     return (
-        <div className="flex justify-end top-full left-1/3">
-          <div className="border-l-2 border-b-2 border-solid border-gray-500 relative mb-10">
+        <div className="flex justify-end top-full left-1/3 ">
+          <div className=" ml-2 border-l-2 border-b-2 border-solid border-gray-500 relative mb-10" style={{borderLeft:'15px solid darksalmon',borderBottom:'15px solid darksalmon'}}>
             <div className="mt-40">
                 {blowdownValue===''?<DetailBox title={'Blowdown'} pvValue={blowdownPV} ovValue={blowdownOV}/>:
                                     <DetailBox1 title={'Blowdown'} value={blowdownValue} subtitle={'(m3/h)'}/>}
                 {blowdownCondensateValue===''?<DetailBox title={'Blowdown Condensate'} pvValue={blowdownCondensatePV} ovValue={blowdownCondensateOV}/>:
                                     <DetailBox1 title={'Blowdown Condensate'} value={blowdownCondensateValue} subtitle={'(m3/h)'}/>}
-                <ArrowForwardIosIcon className='absolute top-[97.3%] left-[94%]' style={{color: '#01add1'}}/>
-                <KeyboardArrowDownIcon className='absolute top-[10%] left-[-8.5%]' style={{fontSize:'46px',color: '#01add1'}} />
+                {/* <ArrowForwardIosIcon className='absolute top-[97.3%] left-[94%]' style={{color: '#01add1'}}/>
+                <KeyboardArrowDownIcon className='absolute top-[10%] left-[-8.5%]' style={{fontSize:'46px',color: '#01add1'}} /> */}
            </div>
            </div>
       </div>
