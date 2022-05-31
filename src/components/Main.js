@@ -64,22 +64,29 @@ class Main extends React.Component {
       <Sidebar />
       <div className="flex flex-col relative w-full">
       <DashboardTopSection data={data}></DashboardTopSection>
-      <div className="flex flex-1 flex-wrap p-6 pt-0 justify-evenly items-center relative">
+      <div className="flex flex-1 flex-wrap px-6 pt-14 justify-evenly relative">
       {coolingTower.map((label,index) => {
       return(
         <div className={status && status[index]==="ON"?"flex flex-col relative":"flex flex-col relative pointer-events-none opacity-80"}>
+          {/* <div id='pipe'></div> */}
+          
           {/* <div className="flex flex-1 justify-center">
-            <div className='border-l-2 border-solid border-gray-500 relative'>
+            <div className='border-l-2 border-solid border-white relative'>
             <KeyboardArrowDownIcon className='text-blue-600 absolute bottom-[-15px] left-[-24px]' style={{fontSize:'46px'}}/>
             </div>
           </div> */}
           <MotorCard label={label} onClick={()=>this.openDialog(label)} key={index}/>
+          <div className="flex flex-1 justify-center">
+            <div className='border-l-8 border-solid border-[#7B3F00] relative'>
+            <KeyboardArrowDownIcon className='text-white absolute bottom-[-17px] left-[-27px]' style={{fontSize:'46px'}}/>
+            </div>
+          </div>
   </div>
   );
 })}
 
   </div>
-  <DashboardBottomSection></DashboardBottomSection>
+  <DashboardBottomSection data={data}></DashboardBottomSection>
   <footer class="text-center lg:text-left" >
   <div class="text-white text-center p-4 ">
     © Copyright 2021, Ariceo :

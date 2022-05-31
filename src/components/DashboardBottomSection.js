@@ -12,9 +12,7 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 
 const rows = [
-  { name:'Bore13'},
-  { name:'Arthesian'},
-  { name:'Sysalar'},
+  { name:'Blowdown'}
 ];
 
 class DashboardBottomSection extends React.Component {
@@ -31,8 +29,8 @@ class DashboardBottomSection extends React.Component {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row" style={{display:'flex'}}>
-               {row.name}
+              <TableCell component="th" scope="row" style={{display:'flex',borderTop:'8px solid #7B3F00'}}>
+              <div style={{minWidth:'70px'}}>{row.name}</div>:<div style={{marginLeft:5}}>{this.props.data.blowdown}</div>
               </TableCell>
               {/* <TableCell align="right">{row.nap1}</TableCell>
               <TableCell align="right">{row.nap2}</TableCell>

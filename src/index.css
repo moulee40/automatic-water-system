@@ -581,3 +581,26 @@ html {
         transform: translateY(-2000px);
     }
 }
+
+/* #pipe {
+    width: 140px;
+    height: 200px;
+    background-color: white;
+  }
+  
+#pipe:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    background: grey;
+    border-bottom-right-radius: 50px;
+  } */
+
+  #white_border{
+    width: 67px;
+    height: 8px;
+    left: -67px;
+    top: 50%;
+    background: #fff;
+  }

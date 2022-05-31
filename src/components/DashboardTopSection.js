@@ -38,23 +38,33 @@ class DashboardTopSection extends React.Component {
         
         <TableBody>
             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row" style={{display:'flex'}}>
+              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'8px solid white'}}>
                <div style={{minWidth:'70px'}}> KWRP</div>:<div style={{marginLeft:5}}> {data.kwrp}</div>
               </TableCell>
             </TableRow>
             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row" style={{display:'flex'}}>
+              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'8px solid yellow'}}>
                <div style={{minWidth:'70px'}}> Bore</div>:<div style={{marginLeft:5}}> {data.bore}</div>
               </TableCell>
             </TableRow>
             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-              <TableCell component="th" scope="row" style={{display:'flex'}}>
-               <div style={{minWidth:'70px'}}> Blockdown</div>:<div style={{marginLeft:5}}> {data.blowdown}</div>
+              <TableCell component="th" scope="row" style={{display:'flex',borderBottom:'8px solid red'}}>
+               <div style={{minWidth:'70px'}}> Clean Condensate</div>:<div style={{marginLeft:5}}> {data.cleanCondensate}</div>
               </TableCell>
             </TableRow>
             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
               <TableCell component="th" scope="row" style={{display:'flex'}}>
-               <div style={{minWidth:'70px'}}> Clean Condensate</div>:<div style={{marginLeft:5}}> {data.cleanCondensate}</div>
+               <div style={{minWidth:'70px'}}> Bore13</div>
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+              <TableCell component="th" scope="row" style={{display:'flex'}}>
+               <div style={{minWidth:'70px'}}> Arthesian</div>
+              </TableCell>
+            </TableRow>
+            <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+              <TableCell component="th" scope="row" style={{display:'flex'}}>
+               <div style={{minWidth:'70px'}}> Synergy</div>
               </TableCell>
             </TableRow>
         </TableBody>

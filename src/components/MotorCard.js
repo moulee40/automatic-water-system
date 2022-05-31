@@ -28,8 +28,8 @@ class MotorCard extends React.Component {
 
   render() {
     return (
-        <div class="max-w-xs bg-white rounded-lg shadow-lg cursor-pointer dark:bg-gray-800 max-h-[176px] min-w-[9rem] relative
-        transition ease-in-out delay-100 hover:scale-110 duration-300" 
+        <div class="max-w-xs bg-white rounded-lg shadow-lg cursor-pointer dark:bg-gray-800 max-h-[176px] min-w-[9rem] relative"
+        // transition ease-in-out delay-100 hover:scale-110 duration-300" 
         onClick={this.props.onClick}>
         <div class="px-4 py-2">
             <h1 class="text-xl font-bold text-gray-800 uppercase dark:text-white">{this.props.label}</h1>
@@ -44,6 +44,9 @@ class MotorCard extends React.Component {
             {/* <button class="px-2 py-1 text-xs font-semibold text-gray-900 uppercase transition-colors duration-200 transform bg-white rounded hover:bg-gray-200 focus:bg-gray-400 focus:outline-none">ON</button> */}
         </div>
         {this.props.displayBottom && <BottomContainer name={this.props.label} data={this.props.data}/>}
+        {/* <div id='white_border' className='border-l-8 border-solid border-white absolute'></div>
+        <div className='border-l-8 border-solid border-yellow-300 absolute'></div>
+        <div className='border-l-8 border-solid border-red-500 absolute'></div> */}
     </div>
     );
   }
