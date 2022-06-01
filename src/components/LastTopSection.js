@@ -70,6 +70,7 @@ class LastTopSection extends React.Component {
          <DetailBoxLastTop title={'Supply Temperature'} value={relativeHumitidity} isTagPresent tagValue/>
          <DetailBoxLastTop title={'Return Temperature'} value={ambientTemp} isTagPresent tagValue/>
          <DetailBoxLastTop title={'Range'} value={wetBulbTemp} isTagPresent tagValue/>
+         <DetailBoxLastTop title={'Current Cost Of Operation'} value={wetBulbTemp} isTagPresent tagValue/>
        </div>
     </div>
     );
