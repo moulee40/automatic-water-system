@@ -56,7 +56,7 @@ export default function DetailDialog({open,handleClose,currentLabel,data}) {
             </Button> */}
           </Toolbar>
         </AppBar>
-        <div style={{background:'radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%)'}}>
+        <div style={{background:'radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%)',display:'flex',flexDirection:'column',flex:'1'}}>
           <div className='flex flex-col flex-1'>
             <LastTopSection data={data}/>
             <div className='flex justify-center items-center'>

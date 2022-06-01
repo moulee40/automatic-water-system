@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import DetailBox1 from "./DetailBox1";
-import DetailBox3 from "./DetailBox3";
+import DetailBoxLastTop from "./DetailBoxLastTop";
 
 class LastTopSection extends React.Component {
   constructor(props) {
@@ -52,35 +52,25 @@ class LastTopSection extends React.Component {
           wetBulbTemp,approachTemp,hti,ct_alk,ct_chloride,ct_conductivity,system_vol,rec_rate,evap_loss,
            drift_loss} = this.state;
     return (
-     <div className='flex'>
-       <div className='flex flex-col'>
-         <DetailBox1 title={'System Vol'} value={system_vol}/>
-         <DetailBox1 title={'Rec rate'} value={rec_rate}/>
-         <DetailBox1 title={'Evap loss'} value={evap_loss}/>
-         <DetailBox1 title={'Drift loss'} value={drift_loss}/>
+     <div className='flex flex-col'>
+       <div className='flex '>
+         <DetailBoxLastTop title={'System Volume'} value={system_vol} isTagPresent tagValue/>
+         <DetailBoxLastTop title={'Recirculation Rate'} value={rec_rate} isTagPresent tagValue/>
+         <DetailBoxLastTop title={'Evaporation Loss'} value={evap_loss} isTagPresent tagValue/>
+         <DetailBoxLastTop title={'Drift loss'} value={drift_loss}  tagValue/>
+         <DetailBoxLastTop title={'Basin Level'} value={drift_loss}  tagValue/>
        </div>
-       <div className='flex flex-col'>
-         <DetailBox1  title={'HTI'} value={hti}/>
-         <DetailBox1 title={'CT Alk'} value={ct_alk}/>
-         <DetailBox1 title={'CT chloride'} value={ct_chloride}/>
-         <DetailBox1 title={'CT conductivity'} value={ct_conductivity}/>
+       <div className='flex '>
+         <DetailBoxLastTop  title={'Relative Humidity'} value={hti} isTagPresent tagValue/>
+         <DetailBoxLastTop title={'Air Temperature'} value={ct_alk}  tagValue/>
+         <DetailBoxLastTop title={'Wet Bulb Temperature'} value={ct_chloride} isTagPresent tagValue/>
+         <DetailBoxLastTop title={'Approach Temperature'} value={ct_conductivity} isTagPresent tagValue/>
        </div>
-       <div className='flex flex-col'>
-         <DetailBox1 title={'Relative Humitidity'} value={relativeHumitidity} subtitle={'%'}/>
-         <DetailBox1 title={'Ambient Temp'} value={ambientTemp} subtitle={'(C)'}/>
-         <DetailBox1 title={'Wetbulb Temp'} value={wetBulbTemp} subtitle={'(C)'}/>
-         <DetailBox1 title={'Approach Temp'} value={approachTemp} subtitle={'(C)'}/>
+       <div className='flex '>
+         <DetailBoxLastTop title={'Supply Temperature'} value={relativeHumitidity} isTagPresent tagValue/>
+         <DetailBoxLastTop title={'Return Temperature'} value={ambientTemp} isTagPresent tagValue/>
+         <DetailBoxLastTop title={'Range'} value={wetBulbTemp} isTagPresent tagValue/>
        </div>
-       <div className='flex flex-col'>
-         <DetailBox1 title={'Supply Temp'} value={supplyTmp} subtitle={'(C)'}/>
-         <DetailBox1 title={'Return Temp'} value={returnTmp} subtitle={'(C)'}/>
-       </div>
-       <div className='flex flex-col'>
-         <DetailBox3 title={'HEX 1(C)'} LMTDvalue={hex1LMTD} TTDvalue={hex1TTD} />
-         <DetailBox3  title={'HEX 2(C)'} LMTDvalue={hex2LMTD} TTDvalue={hex2TTD}/>
-         <DetailBox3  title={'HEX 3(C)'} LMTDvalue={hex3LMTD} TTDvalue={hex3TTD}/>
-       </div>
-           
     </div>
     );
   }
