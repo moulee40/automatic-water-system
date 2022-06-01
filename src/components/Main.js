@@ -22,28 +22,25 @@ class Main extends React.Component {
       currentLabel:'',
       data:{},
       status:[],
-      plantData:{}
+      plantData:{},
+      updatedTime:'12/12/2022 8.30pm'
     };
   }
 
   
   componentWillMount() {
-    const{name}=this.props
-    axios.get(eventBaseUrl).then((res) => {
-     this.setState({
-       data:res.data.data,
-       status:res.data.data.status
-     })
-    })
+    this.interval = setInterval(this.handleDashboardData, 900000);
+    this.handleDashboardData();
   }
 
-  handleLogout = () => {
-    // localStorage.removeItem("username");
-    const {
-      history: { push },
-    } = this.props;
-    push("/");
-  };
+  handleDashboardData =()=>{
+    axios.get(eventBaseUrl).then((res) => {
+      this.setState({
+        data:res.data.data,
+        status:res.data.data.status
+      })
+     })
+  }
 
   openDialog = (label) =>{
     let url= plantDataUrl+label+"/data"
@@ -56,8 +53,10 @@ class Main extends React.Component {
     this.setState({openDialog:false})
   }
 
+
+
   render() {
-    const {openDialog,data,status,plantData} = this.state;
+    const {openDialog,data,status,plantData,updatedTime} = this.state;
     const coolingTower = ["nap1","nap2","nap3"];
     return (
   <div className="h-screen flex">
@@ -92,7 +91,8 @@ class Main extends React.Component {
 
   </div>
   <DashboardBottomSection data={data}></DashboardBottomSection>
-  <footer class="text-center lg:text-left" >
+  <footer class="text-center lg:text-left flex w-full" >
+    <div class="text-white  p-4 w-2/5"><p>Last Updated at {updatedTime}</p></div>
   <div class="text-white text-center p-4 ">
     © Copyright 2021, Ariceo :
     <a class="text-white" href=""> Privacy Terms</a>
