@@ -22,37 +22,24 @@ class LastRightSection extends React.Component {
 
   componentWillMount() {
     const{data}=this.props
-    // let url= eventBaseUrl+name+"/data"
-    // axios.get(url).then((res) => {
-      
-      // if(res.data.kwrp.length!==undefined){
-      //   this.setState({
-      //     kwrpPV:res.data.kwrp[0],
-      //     kwrpOV:res.data.kwrp[1],
-
-      //   })
-      // }
-      // else{
-      //   this.setState({
-      //     kwrpValue:res.data.kwrp
-      //   })
-      // }
       this.setState({
-        supplyTempValue:data.supply_temp,
-        returnTempValue:data.return_temp,
         LMTD1value:data.LMTD1,
         LMTD2value:data.LMTD2,
         LMTD3value:data.LMTD3,
         TTD1value:data.TTD1,
         TTD2value:data.TTD2,
-        TTD3value:data.TTD3
+        TTD3value:data.TTD3,
+        HEX1_tagname:data.HEX1_tagname!==undefined?data.HEX1_tagname:'',
+        HEX2_tagname:data.HEX2_tagname!==undefined?data.HEX2_tagname:'',
+        HEX3_tagname:data.HEX3_tagname!==undefined?data.HEX3_tagname:'',
       })
 
     //  });
   }
 
   render() {
-    const{supplyTempValue,returnTempValue,LMTD1value,LMTD2value,LMTD3value,TTD1value,TTD2value,TTD3value} = this.state;
+    const{HEX3_tagname,HEX1_tagname,HEX2_tagname,LMTD1value,LMTD2value,LMTD3value,TTD1value,TTD2value,TTD3value} = this.state;
+    const {data} = this.props;
     return (
       <div className="flex">
         <div className="space-y-4 self-center mr-9">
@@ -65,9 +52,12 @@ class LastRightSection extends React.Component {
             </div>
           </div>
           <div className="self-center">
-          <DetailBox3 title={'Hex 1(C)'} LMTDvalue={LMTD1value} TTDvalue={TTD1value} isTagPresent tagValue/>
-          <DetailBox3 title={'Hex 2(C)'} LMTDvalue={LMTD2value} TTDvalue={TTD2value} isTagPresent tagValue/>
-          <DetailBox3 title={'Hex 3(C)'} LMTDvalue={LMTD3value} TTDvalue={TTD3value} isTagPresent tagValue/>
+          <DetailBox3 title={'Hex 1(C)'} LMTDvalue={LMTD1value} TTDvalue={TTD1value} 
+                      isTagPresent={data.HEX1_tagname!==undefined?true:false} tagValue={HEX1_tagname}/>
+          <DetailBox3 title={'Hex 2(C)'} LMTDvalue={LMTD2value} TTDvalue={TTD2value} 
+           isTagPresent={data.HEX2_tagname!==undefined?true:false} tagValue={HEX2_tagname}/>
+          <DetailBox3 title={'Hex 3(C)'} LMTDvalue={LMTD3value} TTDvalue={TTD3value} 
+           isTagPresent={data.HEX3_tagname!==undefined?true:false} tagValue={HEX3_tagname}/>
           </div>
       </div>
    

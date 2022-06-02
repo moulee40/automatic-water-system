@@ -23,7 +23,7 @@ class Main extends React.Component {
       data:{},
       status:[],
       plantData:{},
-      updatedTime:'12/12/2022 8.30pm'
+      updatedDateTime:''
     };
   }
 
@@ -37,7 +37,8 @@ class Main extends React.Component {
     axios.get(eventBaseUrl).then((res) => {
       this.setState({
         data:res.data.data,
-        status:res.data.data.status
+        status:res.data.data.status,
+        updatedDateTime:res.data.data.updatedDateTime!==undefined?res.data.data.updatedDateTime:'12/12/2022 9.30AM'
       })
      })
   }
@@ -56,7 +57,7 @@ class Main extends React.Component {
 
 
   render() {
-    const {openDialog,data,status,plantData,updatedTime} = this.state;
+    const {openDialog,data,status,plantData,updatedDateTime} = this.state;
     const coolingTower = ["nap1","nap2","nap3"];
     return (
   <div className="h-screen flex">
@@ -92,7 +93,7 @@ class Main extends React.Component {
   </div>
   <DashboardBottomSection data={data}></DashboardBottomSection>
   <footer class="text-center lg:text-left flex w-full" >
-    <div class="text-white  p-4 w-2/5"><p>Last Updated at {updatedTime}</p></div>
+    <div class="text-white  p-4 w-2/5"><p>Last Updated at {updatedDateTime}</p></div>
   <div class="text-white text-center p-4 ">
     © Copyright 2021, Ariceo :
     <a class="text-white" href=""> Privacy Terms</a>

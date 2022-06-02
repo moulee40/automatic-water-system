@@ -59,7 +59,7 @@ export default function FullScreenDialog({open,handleClose,currentLabel,data}) {
             </Button> */}
           </Toolbar>
         </AppBar>
-        <div style={{background:'radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%)'}}>
+        <div style={{background:'radial-gradient(ellipse at bottom, #1b2735 0%,#090a0f 100%)',display:'flex',flexDirection:'column',flex:'1'}}>
         <List className='flex flex-1 justify-center mt-12'>
             <div className="flex relative mt-12">
               <LeftContainer name={currentLabel} data={data}/>
