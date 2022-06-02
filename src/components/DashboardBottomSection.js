@@ -29,7 +29,7 @@ class DashboardBottomSection extends React.Component {
               key={row.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row" style={{display:'flex',borderTop:'16px solid #7B3F00'}}>
+              <TableCell component="th" scope="row" style={{display:'flex',borderTop:'16px solid #C19A6B'}}>
               <div style={{minWidth:'70px'}}>{row.name}</div>:<div style={{marginLeft:5}}>{this.props.data.blowdown}</div>
               </TableCell>
               {/* <TableCell align="right">{row.nap1}</TableCell>

@@ -59,7 +59,7 @@ class RightContainer extends React.Component {
             <DetailBox1 title={'Return Temp'} value={returnTempValue} subtitle={'(C)'} rounded/>
             <div className="flex w-40 h-28 border-2 border-l-0 border-solid border-gray-500 rounded-none relative" 
                  style={{borderBottom:'15px solid white',borderTop:'15px solid Red',borderRight:'15px solid white',
-                 borderImageSource:'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 50%, rgba(255,0,0,1) 85%)',borderImageSlice:'1'}}>
+                 borderImageSource:'linear-gradient(0deg, rgba(147,197,253,1) 0%, rgba(229,241,255,1) 50%, rgba(255,0,0,1) 85%)',borderImageSlice:'1'}}>
             {/* <ArrowForwardIosIcon className='absolute top-[90%] left-[90%]' style={{color: '#01add1'}}/> */}
             {/* <ArrowBackIosIcon className='absolute top-[-13%]' style={{color: '#01add1'}}/> */}
             <img class="object-contain h-16 absolute left-[70%]" src={HeatIcon} alt="Heat Icon"/>

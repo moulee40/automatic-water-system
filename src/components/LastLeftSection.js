@@ -62,7 +62,7 @@ class LastLeftSection extends React.Component {
               <DetailBoxLastTop rightArrow marginRightLg title={'RO Flow'} value={stream6} isTagPresent={data.ro_flow_tagname!==undefined?true:false} 
                            tagValue={ro_flow_tagname}/>
               </div>
-              <div className='max-h-[458px] mt-[87px]' style={{border:'10px solid white',backgroundColor:'white'}}/>
+              <div className='max-h-[458px] mt-[87px]' style={{border:'10px solid #93c5fd',backgroundColor:'#93c5fd'}}/>
             </div>
             <div className="relative">
             
@@ -73,7 +73,7 @@ class LastLeftSection extends React.Component {
                            tagValue={data.mu_conductivity_tagName!==undefined?data.mu_conductivity_tagName:''}/>
             <DetailBoxLastTop title={'mu flow'} value={mu_flow} isTagPresent={data.mu_flow_tagName!==undefined?true:false} 
                            tagValue={data.mu_flow_tagName!==undefined?data.mu_flow_tagName:''}/>
-            <div className=' border-t-2 border-gray-500 border-solid relative mt-11' style={{border:'12px solid white',backgroundColor:'white'}}>
+            <div className=' border-t-2 border-gray-500 border-solid relative mt-11' style={{border:'12px solid #93c5fd',backgroundColor:'#93c5fd'}}>
             {/* <ArrowForwardIosIcon className='absolute top-[-13px] left-[94%]' style={{color: '#01add1'}} /> */}
             </div>
             {/* <DetailBox marginTopLg/> */}

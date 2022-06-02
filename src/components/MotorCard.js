@@ -45,9 +45,9 @@ class MotorCard extends React.Component {
         </div>
         {this.props.displayBottom && <BottomContainer name={this.props.label} data={this.props.data}/>}
 
-        <div className='border-l-[16px] border-solid border-red-500 h-[156%] absolute bottom-full left-1/4'></div>
-        <div className='border-l-[16px] border-solid border-yellow-300 h-[192%] absolute bottom-full left-1/2'></div>
-        <div  className='border-l-[16px] border-solid border-white h-[234%] absolute bottom-full left-3/4'></div>
+        <div className='border-l-[16px] border-solid border-red-400 h-[156%] absolute bottom-full left-1/4'></div>
+        <div className='border-l-[16px] border-solid border-yellow-200 h-[195%] absolute bottom-full left-1/2'></div>
+        <div  className='border-l-[16px] border-solid border-blue-300 h-[234%] absolute bottom-full left-3/4'></div>
 
     </div>
     );

@@ -82,7 +82,7 @@ class Main extends React.Component {
         </div> */}
           <MotorCard label={label} onClick={()=>this.openDialog(label)} key={index} />
           <div className="flex flex-1 justify-center">
-            <div className='border-l-[16px] border-solid border-[#7B3F00] relative'>
+            <div className='border-l-[16px] border-solid border-[#C19A6B] relative'>
             {/* <KeyboardArrowDownIcon className='text-white absolute bottom-[-17px] left-[-27px]' style={{fontSize:'46px'}}/> */}
             </div>
           </div>
@@ -93,7 +93,7 @@ class Main extends React.Component {
   </div>
   <DashboardBottomSection data={data}></DashboardBottomSection>
   <footer class="text-center lg:text-left flex w-full" >
-    <div class="text-white  p-4 w-2/5"><p>Last Updated at {updatedDateTime}</p></div>
+    <div class="text-white  p-4 w-2/5 italic"><p>Last Updated at {updatedDateTime}</p></div>
   <div class="text-white text-center p-4 ">
     © Copyright 2021, Ariceo :
     <a class="text-white" href=""> Privacy Terms</a>

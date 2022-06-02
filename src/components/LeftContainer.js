@@ -105,12 +105,12 @@ class LeftContainer extends React.Component {
             {schemeValue===''?<DetailBox title={'Scheme'} pvValue={schemePV} ovValue={schemeOV} rightArrow marginRightLg/>:
                               <DetailBox1 title={'Scheme'} value={schemeValue} subtitle={'(m3/h)'} rightArrow marginRightLg/> }
               </div>
-              <div className='max-h-[394px] mt-[99px]' style={{border:'10px solid white',backgroundColor:'white'}}/>
+              <div className='max-h-[394px] mt-[99px]' style={{border:'10px solid #93c5fd',backgroundColor:'#93c5fd'}}/>
             </div>
             <div className="relative">
             {muValue===''?<DetailBox title={'mu'} pvValue={muPV} ovValue={muOV}/>:
                            <DetailBox1 title={'mu'} value={muValue} subtitle={'(m3/h)'}  widthValue={'32'}/>}
-            <div className=' border-t-2 border-gray-500 border-solid relative mt-11' style={{border:'12px solid white',backgroundColor:'white'}}>
+            <div className=' border-t-2 border-gray-500 border-solid relative mt-11' style={{border:'12px solid #93c5fd',backgroundColor:'#93c5fd'}}>
             {/* <ArrowForwardIosIcon className='absolute top-[-13px] left-[94%]' style={{color: '#01add1'}} /> */}
             </div>
             {/* <DetailBox marginTopLg/> */}
