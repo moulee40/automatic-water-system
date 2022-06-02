@@ -63,15 +63,14 @@ export default function DetailDialog({open,handleClose,currentLabel,data}) {
             <LastTopSection data={data}/>
             <div className='flex'>
               <LastLeftSection data={data}/>
-              <div className='mt-24 border-2 border-solid border-gray-200 rounded-lg self-center' style={{backgroundColor:'#017781'}}>
+              <div className='mt-24 border-2 border-solid border-gray-200 rounded-lg self-center relative' style={{backgroundColor:'#017781'}}>
                 <p className='text-xl text-white font-bold uppercase text-center'>{currentLabel}</p>  
-                <img class="object-contain w-full h-48 relative  shadow-lg" src={CoolingTower} alt="NIKE AIR"/>  
+                <img class="object-contain w-full h-48 relative  shadow-lg" src={CoolingTower} alt="NIKE AIR"/>
+                <div id='bottomdiv'></div>  
               </div> 
               <LastRightSection data={data}/>
             </div>
-            {/* <div className='flex justify-center'>
             <LastBottomSection data={data}/>
-            </div> */}
           </div>
           <div className="flex justify-end self-end">
         <button style={{backgroundColor:'#017781'}} class=" text-white font-bold py-2 px-4 rounded m-5" onClick={handleClose}>OK</button>

@@ -597,3 +597,15 @@ html {
     border-bottom-right-radius: 50px;
   } */
 
+#bottomdiv{
+    top: 101%;
+    height: 100px;
+    border: 15px solid brown;
+    border-right: 0;
+    border-top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    width: 560px;
+}
