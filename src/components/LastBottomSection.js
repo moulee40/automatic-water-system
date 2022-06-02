@@ -27,7 +27,7 @@ class LastBottomSection extends React.Component {
     const {mu_conductivity,mu_flow,mu_ph}=this.state;
     const rows = [{name:'Mu conductivity',value:mu_conductivity},{name:'Mu flow',value:mu_flow},{name:'Mu ph',value:mu_ph}];
     return (
-     <div className="flex justify-between">
+     <div className="flex justify-center">
        <div className="flex ">
         <div className="flex flex-col">
         <DetailBoxLastTop title={'System Volume'} value isTagPresent tagValue/>
@@ -42,7 +42,10 @@ class LastBottomSection extends React.Component {
         <DetailBoxLastTop title={'System Volume'} value isTagPresent tagValue/>
         </div>
        </div>
+        <div className="border-l-2 border-solid border-white mx-8"></div>
        <div className="flex flex-col">
+          <DetailBoxLastTop title={'System Volume'} value isTagPresent tagValue/>
+          <DetailBoxLastTop title={'System Volume'} value isTagPresent tagValue/>
           <DetailBoxLastTop title={'System Volume'} value isTagPresent tagValue/>
           <DetailBoxLastTop title={'System Volume'} value isTagPresent tagValue/>
        </div>
